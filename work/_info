@@ -1,0 +1,290 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/alumno
+valu
+Z1 !s100 FiJlO;SecGPB0:R27c6dh1
+Z2 IbF1QI0EjW<gWLL1bNFM_K0
+Z3 VenXLGAfUjSC^PoHBVA9DZ2
+Z4 d/home/alumno/Escritorio
+Z5 w1427280026
+Z6 8/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/alu.v
+Z7 F/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/alu.v
+L0 1
+Z8 OV;L;10.1b;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/alu.v|
+Z10 o-work work -O0
+Z11 !s108 1429534323.318465
+Z12 !s107 /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/alu.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcpu
+Z13 !s100 03Md5HkGZG]ak]0=MEYT60
+Z14 IhVIf;DW`W<amna2;fhDBf1
+Z15 VkH56HU<=:I>ONdA8ocK7?2
+R4
+Z16 w1429533220
+Z17 8/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/cpu.v
+Z18 F/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/cpu.v
+L0 1
+R8
+r1
+31
+Z19 !s90 -reportprogress|300|-work|work|/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/cpu.v|
+R10
+Z20 !s108 1429534323.379415
+Z21 !s107 /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/cpu.v|
+!i10b 1
+!s85 0
+!s101 -O0
+ve_s
+Z22 !s100 j4WQ6eQDQWCTJzP@5=oa:3
+Z23 I4X;VTDo^MO^Q8E1><0]Da3
+Z24 VdDBX`HNSz_1FXOY8TVF@`1
+R4
+Z25 w1426866612
+Z26 8/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/e_s.v
+Z27 F/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/e_s.v
+L0 1
+R8
+r1
+31
+Z28 !s90 -reportprogress|300|-work|work|/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/e_s.v|
+R10
+Z29 !s108 1429534323.438521
+Z30 !s107 /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/e_s.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vmemprog
+Z31 !s100 ;aY9[fT[XgQU<cm3HAC]Q2
+Z32 I@6_@h8W9KhZVfX9G8j5_13
+Z33 VU^4PS^ILhXJSDi0J3ezGm1
+R4
+Z34 w1429092027
+Z35 8/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/memprog.v
+Z36 F/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/memprog.v
+L0 3
+R8
+r1
+31
+Z37 !s90 -reportprogress|300|-work|work|/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/memprog.v|
+R10
+Z38 !s108 1429534323.467062
+Z39 !s107 /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/memprog.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vmicroc
+Z40 !s100 ^;^^`W^j3b0Ez5[RDlDNI3
+Z41 I_E]@dh`L_j;G?ed20ofI_2
+Z42 VWZ_EnZ5nbVJ:MY@kM62kW0
+R4
+Z43 w1428486006
+Z44 8/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/microc.v
+Z45 F/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/microc.v
+L0 1
+R8
+r1
+31
+Z46 !s90 -reportprogress|300|-work|work|/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/microc.v|
+R10
+!i10b 1
+!s85 0
+Z47 !s108 1429534323.492270
+Z48 !s107 /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/microc.v|
+!s101 -O0
+vmux1
+Z49 !s100 enD`o1b:Oag8@M36Mmj:o2
+Z50 IaMmj@GYKBJ@lBLd5oW?g]3
+Z51 VzgTDeVB::1Oe44^EX^<L;2
+R4
+Z52 w1429089459
+Z53 8/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/componentes.v
+Z54 F/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/componentes.v
+L0 51
+R8
+r1
+31
+Z55 !s108 1429534323.344138
+Z56 !s107 /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/componentes.v|
+Z57 !s90 -reportprogress|300|-work|work|/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/componentes.v|
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vmux2
+Z58 !s100 ^YaJMzla9JA=bh5W5A@C;0
+Z59 Ib`z4S^26K[eJNTd0844Yn3
+Z60 VT8RWJBjAIeM]>7U=5kBkT1
+R4
+R52
+R53
+R54
+L0 61
+R8
+r1
+31
+R55
+R56
+R57
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vmux_in
+Z61 !s100 WJh><BP??zz[3F_7cSQLN2
+Z62 I`0?DB8UT3KXo6c`JKaKIQ3
+Z63 V:SdenM;m[BBJ8gNiZ:3LU1
+R4
+R52
+R53
+R54
+L0 87
+R8
+r1
+31
+R55
+R56
+R57
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vmux_out
+Z64 !s100 FIF7Gid@WR9`U^kanRRn@3
+Z65 IFMGk=R6`;D`abX`@SicWD1
+Z66 VB]Sa?RlD9WA]IF0IFjfMU3
+R4
+R52
+R53
+R54
+Z67 L0 110
+R8
+r1
+31
+R55
+R56
+R57
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vreg_e
+Z68 !s100 E^Q[F[ThK16<H_644]Wn<3
+Z69 IdCC_Q[m;j0lCAE70KUjZ42
+Z70 VhU[^>6LLg;:<<0RK]5;iC2
+R4
+R52
+R53
+R54
+L0 73
+R8
+r1
+31
+R55
+R56
+R57
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vregfile
+Z71 !s100 UG^=G2NXz3]9YZ5Wf?dIV2
+Z72 IQIC1QXA55hV1j75;zA1[Y2
+Z73 VI5z8<lJcjz;XN9<;Nm>UO3
+R4
+R52
+R53
+R54
+L0 4
+R8
+r1
+31
+R55
+R56
+R57
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vregistro
+Z74 !s100 hXb>=YE6RJh4O]@YmYfl[1
+Z75 IU`eR78?<G2Na_NW:Z6@3U0
+Z76 VJ[_h7<:bK^i^`WUS`Li1<1
+R4
+R52
+R53
+R54
+L0 30
+R8
+r1
+31
+R55
+R56
+R57
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vretorno_reg
+Z77 !s100 RzQ^K2fb4j2M77QV58QF<3
+Z78 ILOf3A@_0Km;YaeB56EU_j2
+Z79 V6JjE<iGJ>FU_hUe^zgWab0
+R4
+R52
+R53
+R54
+L0 40
+R8
+r1
+31
+R55
+R56
+R57
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vsum
+Z80 !s100 zIOf2MVMGSEGAkmk0KF@E3
+Z81 IUOBE5MPc8ADNh435037zN2
+Z82 VA7?gbGQM2IRzcJYa:4lZf2
+R4
+R52
+R53
+R54
+L0 23
+R8
+r1
+31
+R55
+R56
+R57
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vuc
+!i10b 1
+Z83 !s100 ePnf=1MaiZOz>O@;i3d@^2
+Z84 I0fA;DnOmL2k>1CRFF>XS41
+Z85 VE0jFY@[9RE4fakdO?VJIk3
+R4
+Z86 w1427880408
+Z87 8/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/uc.v
+Z88 F/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/uc.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1429534323.519067
+!s107 /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/uc.v|
+Z89 !s90 -reportprogress|300|-work|work|/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/uc.v|
+!s101 -O0
+R10

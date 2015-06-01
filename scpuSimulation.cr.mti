@@ -1,0 +1,59 @@
+/home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/memprog.v {1 {vlog -work work /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/memprog.v
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module memprog
+
+Top level modules:
+	memprog
+
+} {} {}} /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/componentes.v {1 {vlog -work work /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/componentes.v
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module regfile
+-- Compiling module sum
+-- Compiling module registro
+-- Compiling module retorno_reg
+-- Compiling module mux1
+-- Compiling module mux2
+-- Compiling module reg_e
+-- Compiling module mux_in
+-- Compiling module mux_out
+
+Top level modules:
+	regfile
+	sum
+	registro
+	retorno_reg
+	mux1
+	mux2
+	reg_e
+	mux_in
+	mux_out
+
+} {} {}} /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/e_s.v {1 {vlog -work work /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/e_s.v
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module e_s
+
+Top level modules:
+	e_s
+
+} {} {}} /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/cpu.v {1 {vlog -work work /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/cpu.v
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module cpu
+
+Top level modules:
+	cpu
+
+} {} {}} /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/uc.v {1 {vlog -work work /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/uc.v
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module uc
+
+Top level modules:
+	uc
+
+} {} {}} /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/alu.v {1 {vlog -work work /home/alumno/Escritorio/EntradaSalidaAmpliada/Codigo/alu.v
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}}
