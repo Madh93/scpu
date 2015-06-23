@@ -1,4 +1,9 @@
 vendor_name = ModelSim
+source_file = 1, /home/alumno/Escritorio/scpu/modules/vga_adapter/vga_pll.v
+source_file = 1, /home/alumno/Escritorio/scpu/modules/vga_adapter/vga_controller.v
+source_file = 1, /home/alumno/Escritorio/scpu/modules/vga_adapter/vga_address_translator.v
+source_file = 1, /home/alumno/Escritorio/scpu/modules/vga_adapter/vga_adapter.v
+source_file = 1, /home/alumno/Escritorio/scpu/modules/vga_demo.v
 source_file = 1, /home/alumno/Escritorio/scpu/modules/alu.v
 source_file = 1, /home/alumno/Escritorio/scpu/modules/componentes.v
 source_file = 1, /home/alumno/Escritorio/scpu/modules/cpu.v
