@@ -1,0 +1,53 @@
+#asignamos unos opcodes a la suma, resta y multiplicacion
+#para compararlos con el operando de entrada
+li $5, 8    #operando asignado a la suma (1000)       
+li $6, 4    #operando asignado a la resta (0100)
+li $7, 2    #operando asignado a la multiplicacion (0010)
+
+main:
+
+    lesr $1, @0     #cargamos en registro el primer valor de la e/s
+    lesr $2, @1     #cargamos en registro el segundo valor de la e/s
+    lesr $3, @2     #cargamos en registro el oerando desde la e/s
+
+    sub $4, $3, $5  #comparamos en busca de la suma
+    #si el resultado de lo anterior da 0 quiere decir que el operando es 1000 y saltamos a realizar la suma
+    beqz sumar
+    
+    sub $4, $3, $6  #comparamos en busca de la resta
+    #si el resultado de lo anterior da 0 quiere decir que el operando es 0100 y saltamos a realizar la resta
+    beqz restar
+    
+    sub $4, $3, $7  #comparamos en busca de la multiplicacion
+    #si el resultado de lo anterior da 0 quiere decir que el operando es 0010 y saltamos a realizar la multiplicacion
+    beqz multiplicar
+    
+    j main
+
+sumar:
+
+    add $4, $1, $2
+    j guardar
+
+restar:
+
+    sub $4, $1, $2
+    j guardar
+
+multiplicar:
+
+    li $8, 1  #contador
+    move $4, $0
+    add $1, $1, $0  # si $1 == 0, no hacer bucle
+    beqz guardar     
+
+bucle:
+
+    add $4, $4, $2  #repetir tantas veces $1
+    sub $1, $1, $8  
+    bnez bucle
+
+guardar:
+
+    sesr @0, $4 #guardar en el puerto 0 de la e/s el registro 4
+    j main
