@@ -1,0 +1,42 @@
+[*]
+[*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
+[*] Wed Jun 24 14:55:18 2015
+[*]
+[dumpfile] "/home/alumno/Escritorio/scpu/modules/cpu_tb.vcd"
+[dumpfile_mtime] "Wed Jun 24 14:52:53 2015"
+[dumpfile_size] 30243
+[savefile] "/home/alumno/Escritorio/scpu/modules/cpu.gtkw"
+[timestart] 0
+[size] 1920 1033
+[pos] -415 -276
+*-19.000000 1000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] cpu_tb.
+[sst_width] 202
+[signals_width] 181
+[sst_expanded] 1
+[sst_vpaned_height] 313
+@24
+cpu_tb.e1[7:0]
+cpu_tb.e2[7:0]
+cpu_tb.e3[7:0]
+cpu_tb.e4[7:0]
+@28
+[color] 1
+cpu_tb.opcode[5:0]
+[color] 2
+cpu_tb.operacion[2:0]
+[color] 3
+cpu_tb.reset
+@25
+[color] 5
+cpu_tb.s1[7:0]
+[color] 5
+cpu_tb.s2[7:0]
+[color] 5
+cpu_tb.s3[7:0]
+[color] 5
+cpu_tb.s4[7:0]
+@28
+cpu_tb.z
+[pattern_trace] 1
+[pattern_trace] 0

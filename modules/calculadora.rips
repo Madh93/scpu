@@ -1,26 +1,27 @@
 #asignamos unos opcodes a la suma, resta y multiplicacion
 #para compararlos con el operando de entrada
-li $5, 8    #operando asignado a la suma (1000)       
-li $6, 4    #operando asignado a la resta (0100)
-li $7, 2    #operando asignado a la multiplicacion (0010)
+li $5, 0    #operando asignado a la suma (00)       
+li $6, 1    #operando asignado a la resta (01)
+li $7, 2    #operando asignado a la multiplicacion (10)
+li $8, 3    #operando asignado a la division (11)
 
 main:
 
     lesr $1, @0     #cargamos en registro el primer valor de la e/s
     lesr $2, @1     #cargamos en registro el segundo valor de la e/s
-    lesr $3, @2     #cargamos en registro el oerando desde la e/s
+    lesr $3, @2     #cargamos en registro el operador desde la e/s
 
     sub $4, $3, $5  #comparamos en busca de la suma
-    #si el resultado de lo anterior da 0 quiere decir que el operando es 1000 y saltamos a realizar la suma
-    beqz sumar
+    bnez sumar
     
     sub $4, $3, $6  #comparamos en busca de la resta
-    #si el resultado de lo anterior da 0 quiere decir que el operando es 0100 y saltamos a realizar la resta
-    beqz restar
+    bnez restar
     
     sub $4, $3, $7  #comparamos en busca de la multiplicacion
-    #si el resultado de lo anterior da 0 quiere decir que el operando es 0010 y saltamos a realizar la multiplicacion
-    beqz multiplicar
+    bnez multiplicar
+
+    sub $4, $3, $8  #comparamos en busca de la division
+    bnez dividir 
     
     j main
 
@@ -36,16 +37,29 @@ restar:
 
 multiplicar:
 
-    li $8, 1  #contador
     move $4, $0
-    add $1, $1, $0  # si $1 == 0, no hacer bucle
-    beqz guardar     
+    add $1, $1, $0  # si $1 == 0, no hacer bucle1
+    bnez guardar     
 
-bucle:
+bucle1:
 
     add $4, $4, $2  #repetir tantas veces $1
-    sub $1, $1, $8  
-    bnez bucle
+    sub $1, $1, $6  
+    beqz bucle1
+    j guardar
+
+dividir:
+
+    move $4, $0
+    lest $0, $1, $2     # si el $1 es menor -> z=0, si z igual a cero salir
+    beqz guardar         
+
+bucle2:
+
+    add $4, $4, $6  # sumar 1 unidad  
+    sub $1, $1, $2
+    lest $0, $1, $2     #si es no es menor -> z=1 por lo que repetir
+    bnez bucle2
 
 guardar:
 

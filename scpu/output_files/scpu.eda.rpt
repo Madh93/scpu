@@ -1,5 +1,5 @@
 EDA Netlist Writer report for scpu
-Tue Jun 23 12:46:37 2015
+Fri Jun 26 16:28:26 2015
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jun 23 12:46:37 2015 ;
+; EDA Netlist Writer Status ; Successful - Fri Jun 26 16:28:26 2015 ;
 ; Revision Name             ; scpu                                  ;
 ; Top-level Entity Name     ; cpu                                   ;
 ; Family                    ; Cyclone II                            ;
@@ -84,12 +84,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jun 23 12:46:36 2015
+    Info: Processing started: Fri Jun 26 16:28:24 2015
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off scpu -c scpu
 Info (204026): Generated files "scpu.vo", "scpu_fast.vo", "scpu_v.sdo" and "scpu_v_fast.sdo" in directory "/home/alumno/Escritorio/scpu/scpu/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 298 megabytes
-    Info: Processing ended: Tue Jun 23 12:46:38 2015
+    Info: Processing ended: Fri Jun 26 16:28:26 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

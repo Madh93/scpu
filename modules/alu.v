@@ -16,7 +16,7 @@ module alu(input wire [7:0] a, b,
       3'b100: s = a & b;
       3'b101: s = a | b;
       3'b110: s = -a;
-      3'b111: s = -b;
+      3'b111: s = b < a;
   	default: s = 'bx; //desconocido en cualquier otro caso (x ó z), por si se modifica el código
     endcase
   end

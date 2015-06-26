@@ -115,7 +115,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
         end                
 
         // Instrucción: Salto Condicional (si z=0)
-        6'b001111:
+        6'b011111:
         begin
           we3 <= 1'b0;       //No trabaja con registros
           s_inm <= 1'b0;     //Da igual el valor porque no se trabaja con registros
@@ -129,7 +129,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
         end
     
         // Instrucción: Salto Condicional (si z=1)
-        6'b011111:
+        6'b001111:
         begin
           we3 <= 1'b0;       //No trabaja con registros
           s_inm <= 1'b0;     //Da igual el valor porque no se trabaja con registros
