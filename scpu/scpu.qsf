@@ -84,7 +84,6 @@ set_global_assignment -name VERILOG_FILE ../modules/vga_adapter/vga_pll.v
 set_global_assignment -name VERILOG_FILE ../modules/vga_adapter/vga_controller.v
 set_global_assignment -name VERILOG_FILE ../modules/vga_adapter/vga_address_translator.v
 set_global_assignment -name VERILOG_FILE ../modules/vga_adapter/vga_adapter.v
-set_global_assignment -name VERILOG_FILE ../modules/vga_demo.v
 set_global_assignment -name VERILOG_FILE ../modules/alu.v
 set_global_assignment -name VERILOG_FILE ../modules/componentes.v
 set_global_assignment -name VERILOG_FILE ../modules/cpu.v
@@ -95,4 +94,19 @@ set_global_assignment -name VERILOG_FILE ../modules/uc.v
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_M2 -to e1[3]
+set_location_assignment PIN_A9 -to VGA_B[0]
+set_location_assignment PIN_D11 -to VGA_B[1]
+set_location_assignment PIN_A10 -to VGA_B[2]
+set_location_assignment PIN_B10 -to VGA_B[3]
+set_location_assignment PIN_B8 -to VGA_G[0]
+set_location_assignment PIN_C10 -to VGA_G[1]
+set_location_assignment PIN_B9 -to VGA_G[2]
+set_location_assignment PIN_A8 -to VGA_G[3]
+set_location_assignment PIN_A11 -to VGA_HS
+set_location_assignment PIN_D9 -to VGA_R[0]
+set_location_assignment PIN_C9 -to VGA_R[1]
+set_location_assignment PIN_A7 -to VGA_R[2]
+set_location_assignment PIN_B7 -to VGA_R[3]
+set_location_assignment PIN_B11 -to VGA_VS
+set_location_assignment PIN_L1 -to VGA_CLOCK
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

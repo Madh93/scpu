@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="scpu">
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|vga_adapter:VGA1|altsyncram:VideoMemory" CBX_FILE_NAME="altsyncram_shg1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
