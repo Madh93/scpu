@@ -13,10 +13,6 @@ module cpu(input wire clk, reset,
   wire [1:0] id_in, id_out;
   wire [2:0] op;
   wire [7:0] data_mem, data_reg, data_in;
-  //wire rst;
-
-  //assign rst = ~reset;
-  //assign operacion = e3[1:0];
 
   // Instancias
   uc uc_(clk, ~reset, z, id_out, opcode, sinc, sinm, we3, rwe1, rwe2, rwe3, rwe4, sec, s_es, s_rel, swe, s_ret, op);

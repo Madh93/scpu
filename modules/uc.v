@@ -76,6 +76,30 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           s_rel <= 1'b0;    //Despreciar salto relativo
         end
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        // Instrucción: PRINT muestra por pantalla un registro
+        6'bxx1100:
+        begin
+          we3 <= 1'b0;       // No trabaja con registros
+          s_inm <= 1'b0;     // Da igual el valor porque no se trabaja con registro
+          sec <= 1'b1;      // Se envia a la E/S desde un registro
+          s_es <= 1'b0;     //Desactivar entrada desde E/S
+          s_inc <= 1'b1;    //Siguiente instrucción
+          s_rel <= 1'b0;    //Despreciar salto relativo
+
+          rwe2 <= 1'b1;
+          //rwe3 <= 1'b1;
+
+        end
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
         // Instrucción: Envia a la E/S desde el registro
         6'bxx1101:
         begin

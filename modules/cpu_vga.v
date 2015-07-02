@@ -25,10 +25,10 @@ module cpu_vga(
   vga vga_(
         .reset(reset),
         .clock(VGA_CLOCK),
-        .colour(3'b000),  //1 o 0 que lea desde la memoria
-        .x(1),  //salida2
-        .y(1),  //salida3
-        .plot(0), //salida4 (equivalente al enable)
+        .colour(3'b011),  //1 o 0 que lea desde la memoria
+        .x(e1),  //salida2
+        .y(e2),  //salida3
+        .plot(e3), //salida4 (equivalente al enable)
         // Signals for the DAC to drive the monitor.
         .VGA_R(VGA_R),
         .VGA_G(VGA_G),

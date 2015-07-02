@@ -1,0 +1,50 @@
+[*]
+[*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
+[*] Thu Jul  2 11:30:21 2015
+[*]
+[dumpfile] "/home/alumno/Escritorio/scpu/modules/cpu_vga_tb.vcd"
+[dumpfile_mtime] "Thu Jul  2 11:28:43 2015"
+[dumpfile_size] 10283
+[savefile] "/home/alumno/Escritorio/scpu/modules/cpu_vga.gtkw"
+[timestart] 0
+[size] 1920 1033
+[pos] -1 -4
+*-20.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] cpu_vga_tb.
+[treeopen] cpu_vga_tb.cpu_vga_.
+[treeopen] cpu_vga_tb.cpu_vga_.cpu_.
+[treeopen] cpu_vga_tb.cpu_vga_.cpu_.microc_.
+[sst_width] 202
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 313
+@25
+cpu_vga_tb.cpu_vga_.cpu_.microc_.memoria_.a[9:0]
+@28
+cpu_vga_tb.clk
+@24
+[color] 5
+cpu_vga_tb.e1[7:0]
+[color] 5
+cpu_vga_tb.e2[7:0]
+[color] 5
+cpu_vga_tb.e3[7:0]
+[color] 5
+cpu_vga_tb.e4[7:0]
+@22
+cpu_vga_tb.opcode[5:0]
+@28
+cpu_vga_tb.reset
+@24
+[color] 2
+cpu_vga_tb.s1[7:0]
+[color] 2
+cpu_vga_tb.s2[7:0]
+[color] 2
+cpu_vga_tb.s3[7:0]
+[color] 2
+cpu_vga_tb.s4[7:0]
+@28
+cpu_vga_tb.z
+[pattern_trace] 1
+[pattern_trace] 0
