@@ -5,7 +5,10 @@
 `include "cpu.v"
 `include "e_s.v"
 `include "memprog.v"
+`include "memvga.v"
 `include "microc.v"
+`include "printvga.v"
+`include "regtovga.v"
 `include "uc.v"
 
 module cpu_tb;
@@ -16,6 +19,10 @@ module cpu_tb;
   wire [5:0] opcode;
   wire [2:0] operacion;
   wire z;
+  reg vgae;
+  wire [7:0] vgax;
+  wire [7:0] vgay;
+  wire vgaw;
 
   always 
   begin
@@ -37,6 +44,8 @@ module cpu_tb;
     e3 = 8'b00000000; //5
     e4 = 8'b00000000; //128
 
+    vgae=0;
+
     reset = 1;
     #5
     reset = 0;
@@ -45,6 +54,5 @@ module cpu_tb;
     $finish;
   end
 
-  cpu cpu_(clk,~reset,e1,e2,e3,e4,s1,s2,s3,s4,opcode,z);
-
+  cpu cpu_(clk,~reset,vgae,e1,e2,e3,e4,s1,s2,s3,s4,vgax,vgay,vgaw,opcode,z);
 endmodule
