@@ -1,5 +1,5 @@
 module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] opcode, 
-          output reg vgae, vgae2, s_inc, s_inm, we3, rwe1, rwe2, rwe3, rwe4, sec, s_es, s_rel, swe, s_ret, output wire [2:0] op);
+          output reg s_inc, s_inm, we3, rwe1, rwe2, rwe3, rwe4, sec, s_es, s_rel, swe, s_ret, output wire [2:0] op);
 
 
   assign op = opcode[2:0];
@@ -13,8 +13,6 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
     rwe4 <= 1'b0;      //Desactivar puertos de E/S
     swe <= 1'b0;      //desactivar registro especial(subrutina)
     s_ret <= 1'b0;    //no tomar valor de retorno
-    vgae <= 1'b0;     //Desactivar pintar en VGA
-    vgae2 <= 1'b0;     //Desactivar pintar en VGA    
 
     if (reset == 1'b1)
     begin
@@ -26,8 +24,6 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
       s_rel <= 1'b0;    //Despreciar salto relativo
       swe <= 1'b0;      //desactivar registro especial(subrutina)
       s_ret <= 1'b0;    //no tomar valor de retorno
-      vgae <= 1'b0;     //Desactivar pintar en VGA
-      vgae2 <= 1'b0;     //Desactivar pintar en VGA      
     end
 
     else
@@ -44,8 +40,6 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
           s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA
         end
 
         // Instrucción: Carga Inmediata
@@ -56,9 +50,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           s_inc <= 1'b1;     //Escoger siguiente instrucción
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
-          s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_rel <= 1'b0;    //Despreciar salto relativo         
         end
 
         // Instrucción: Salto Incondicional
@@ -69,9 +61,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           s_inc <= 1'b0;     //Escoger el salto indicado
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
-          s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_rel <= 1'b0;    //Despreciar salto relativo         
         end
 
         // Instrucción: LES cargar desde E/S
@@ -82,9 +72,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           sec <= 1'b0;      //Da igual
           s_es <= 1'b1;     //Activar entrada desde E/S
           s_inc <= 1'b1;   //Siguiente instrucción
-          s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_rel <= 1'b0;    //Despreciar salto relativo        
         end
 
 
@@ -93,23 +81,21 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
 
 
         // Instrucción: PRINT muestra por pantalla un registro
-        6'bxx1100:
-        begin
-          we3 <= 1'b0;       // No trabaja con registros
-          s_inm <= 1'b0;     // Da igual el valor porque no se trabaja con registro
-          sec <= 1'b1;      // Se envia a la E/S desde un registro
-          s_es <= 1'b0;     //Desactivar entrada desde E/S
-          s_inc <= 1'b1;    //Siguiente instrucción
-          s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b1;     //ACTIVAR pintar en VGA
-          vgae2 <= 1'b1;     //Desactivar pintar en VGA          
+        // 6'bxx1100:
+        // begin
+        //   // we3 <= 1'b0;       // No trabaja con registros
+        //   // s_inm <= 1'b0;     // Da igual el valor porque no se trabaja con registro
+        //   // sec <= 1'b1;      // Se envia a la E/S desde un registro
+        //   // s_es <= 1'b0;     //Desactivar entrada desde E/S
+        //   // s_inc <= 1'b1;    //Siguiente instrucción
+        //   // s_rel <= 1'b0;    //Despreciar salto relativo        
 
-          rwe1 <= 1'b1;
-          rwe2 <= 1'b1;
-          rwe3 <= 1'b1;
-          rwe4 <= 1'b1;
+        //   // rwe1 <= 1'b1;
+        //   // rwe2 <= 1'b1;
+        //   // rwe3 <= 1'b1;
+        //   // rwe4 <= 1'b1;
 
-        end
+        // end
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -123,9 +109,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           sec <= 1'b1;      //A 1 = Registro
           s_es <= 1'b0;     //Desctivar entrada desde E/S
           s_inc <= 1'b1;   //Siguiente instrucción
-          s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_rel <= 1'b0;    //Despreciar salto relativo        
           if (id_out == 2'b00)
             rwe1 <= 1'b1;
           else if(id_out == 2'b01)
@@ -144,9 +128,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           sec <= 1'b0;      //A 0 = Memoria
           s_es <= 1'b0;     //Desctivar entrada desde E/S
           s_inc <= 1'b1;   //Siguiente instrucción
-          s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_rel <= 1'b0;    //Despreciar salto relativo        
           if (id_out == 2'b00)
             rwe1 <= 1'b1;
           else if(id_out == 2'b01)
@@ -164,9 +146,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           s_inm <= 1'b0;     //Da igual el valor porque no se trabaja con registros
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
-          s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_rel <= 1'b0;    //Despreciar salto relativo        
           if (z == 1'b0)
             s_inc <= 1'b0;   //Saltar
           else
@@ -180,9 +160,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           s_inm <= 1'b0;     //Da igual el valor porque no se trabaja con registros
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
-          s_rel <= 1'b0;    //Despreciar salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_rel <= 1'b0;    //Despreciar salto relativo        
           if (z == 1'b0)
             s_inc <= 1'b1;   //Siguiente instrucción
           else
@@ -197,9 +175,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           s_inc <= 1'b1;     //Escoger el salto relativo
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
-          s_rel <= 1'b1;    //Escoger salto relativo
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_rel <= 1'b1;    //Escoger salto relativo       
         end
         
         //Instrucción: Salto a subrutina
@@ -211,9 +187,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
           s_rel <= 1'b0;    //Escoger siguiente instrucción
-          swe <= 1'b1;      //activar registro especial(subrutina)
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          swe <= 1'b1;      //activar registro especial(subrutina)        
         end
         
         //Instrucción: Retorno subrutina
@@ -225,9 +199,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
           s_rel <= 1'b0;    //Da igual
-          s_ret <= 1'b1;    //Tomar el valor de retorno
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_ret <= 1'b1;    //Tomar el valor de retorno          
         end
 
         //Instrucción: NOP
@@ -239,9 +211,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
           s_rel <= 1'b0;    //No activar salto relativo   
-          s_ret <= 1'b0;    //No tomar el valor de retorno
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_ret <= 1'b0;    //No tomar el valor de retorno        
         end
 
         default:
@@ -252,9 +222,7 @@ module uc(input wire clock,reset,z, input wire [1:0] id_out, input wire [5:0] op
           sec <= 1'b0;      //Da igual
           s_es <= 1'b0;     //Desactivar E/S
           s_rel <= 1'b0;    //No activar salto relativo   
-          s_ret <= 1'b0;    //No tomar el valor de retorno
-          vgae <= 1'b0;     //Desactivar pintar en VGA
-          vgae2 <= 1'b0;     //Desactivar pintar en VGA          
+          s_ret <= 1'b0;    //No tomar el valor de retorno       
         end
       endcase
     end

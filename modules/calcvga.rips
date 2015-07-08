@@ -1,0 +1,88 @@
+main:
+
+    #lesr $1, @0     #cargamos en registro el primer valor de la e/s
+    #lesr $2, @1     #cargamos en registro el segundo valor de la e/s
+    #lesr $3, @2     #cargamos en registro el operador desde la e/s
+    #sesr @1, $0
+    #sesm @2, 0
+    #sesm @2, 0
+
+    #li $1, 0
+
+    
+    
+    sesm @2, 0
+    sesm @2, 0
+    sesm @2, 0
+    sesm @2, 0
+
+    li $1, 0
+    sesr @0, $1
+    sesm @1, 0
+    sesm @2, 1
+    sesm @2, 0
+    
+    li $1, 1
+    sesr @0, $1
+    sesm @1, 0
+    sesm @2, 1
+    sesm @2, 0
+    
+    li $1, 2
+    sesr @0, $1
+    sesm @1, 0
+    sesm @2, 1
+    sesm @2, 0
+
+    li $1, 3
+    sesr @0, $1
+    sesm @1, 0
+    sesm @2, 1
+    sesm @2, 0
+    
+    li $1, 4
+    sesr @0, $1    
+    sesm @1, 0
+    sesm @2, 1
+    sesm @2, 0
+    
+    li $1, 5
+    sesr @0, $1
+    sesm @1, 0
+    sesm @2, 1
+    sesm @2, 0
+    
+    sesm @0, 2
+    sesm @1, 2
+    sesm @2, 1
+    sesm @2, 0
+    
+    sesm @0, 0
+    sesm @1, 3
+    sesm @2, 1
+    sesm @2, 0
+    
+    sesm @0, 2
+    sesm @1, 3
+    sesm @2, 1
+    sesm @2, 0
+    
+    sesm @0, 0
+    sesm @1, 4
+    sesm @2, 1
+    sesm @2, 0
+    
+    sesm @0, 1
+    sesm @1, 4
+    sesm @2, 1
+    sesm @2, 0
+    
+    sesm @0, 2
+    sesm @1, 4
+    sesm @2, 1
+    sesm @2, 0
+    
+
+
+
+    j main

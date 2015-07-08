@@ -1,5 +1,5 @@
 Analysis & Synthesis report for scpu
-Mon Jul  6 20:13:11 2015
+Wed Jul  8 10:08:32 2015
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -76,16 +76,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul  6 20:13:11 2015         ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul  8 10:08:32 2015         ;
 ; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; scpu                                          ;
 ; Top-level Entity Name              ; cpu_vga                                       ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 376                                           ;
-;     Total combinational functions  ; 315                                           ;
-;     Dedicated logic registers      ; 105                                           ;
-; Total registers                    ; 105                                           ;
-; Total pins                         ; 95                                            ;
+; Total logic elements               ; 375                                           ;
+;     Total combinational functions  ; 346                                           ;
+;     Dedicated logic registers      ; 83                                            ;
+; Total registers                    ; 83                                            ;
+; Total pins                         ; 77                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 57,600                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                             ;
@@ -194,9 +194,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path                  ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                              ; Library ;
 +---------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------+---------+
-; ../modules/printvga.v                             ; yes             ; User Verilog HDL File                  ; /home/alumno/Escritorio/scpu/modules/printvga.v                           ;         ;
-; ../modules/memvga.v                               ; yes             ; User Verilog HDL File                  ; /home/alumno/Escritorio/scpu/modules/memvga.v                             ;         ;
-; ../modules/regtovga.v                             ; yes             ; User Verilog HDL File                  ; /home/alumno/Escritorio/scpu/modules/regtovga.v                           ;         ;
 ; ../modules/cpu_vga.v                              ; yes             ; User Verilog HDL File                  ; /home/alumno/Escritorio/scpu/modules/cpu_vga.v                            ;         ;
 ; ../modules/vga.v                                  ; yes             ; User Verilog HDL File                  ; /home/alumno/Escritorio/scpu/modules/vga.v                                ;         ;
 ; ../modules/vga_adapter/vga_pll.v                  ; yes             ; User Wizard-Generated File             ; /home/alumno/Escritorio/scpu/modules/vga_adapter/vga_pll.v                ;         ;
@@ -211,7 +208,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ../modules/microc.v                               ; yes             ; User Verilog HDL File                  ; /home/alumno/Escritorio/scpu/modules/microc.v                             ;         ;
 ; ../modules/uc.v                                   ; yes             ; User Verilog HDL File                  ; /home/alumno/Escritorio/scpu/modules/uc.v                                 ;         ;
 ; /home/alumno/Escritorio/scpu/modules/progfile.dat ; yes             ; Auto-Found Unspecified File            ; /home/alumno/Escritorio/scpu/modules/progfile.dat                         ;         ;
-; /home/alumno/Escritorio/scpu/modules/vga.dat      ; yes             ; Auto-Found Unspecified File            ; /home/alumno/Escritorio/scpu/modules/vga.dat                              ;         ;
 ; altsyncram.tdf                                    ; yes             ; Megafunction                           ; /opt/altera/12.1sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc                             ; yes             ; Megafunction                           ; /opt/altera/12.1sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                                       ; yes             ; Megafunction                           ; /opt/altera/12.1sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -238,31 +234,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 376   ;
+; Estimated Total logic elements              ; 375   ;
 ;                                             ;       ;
-; Total combinational functions               ; 315   ;
+; Total combinational functions               ; 346   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 180   ;
-;     -- 3 input functions                    ; 69    ;
-;     -- <=2 input functions                  ; 66    ;
+;     -- 4 input functions                    ; 157   ;
+;     -- 3 input functions                    ; 120   ;
+;     -- <=2 input functions                  ; 69    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 264   ;
-;     -- arithmetic mode                      ; 51    ;
+;     -- normal mode                          ; 287   ;
+;     -- arithmetic mode                      ; 59    ;
 ;                                             ;       ;
-; Total registers                             ; 105   ;
-;     -- Dedicated logic registers            ; 105   ;
+; Total registers                             ; 83    ;
+;     -- Dedicated logic registers            ; 83    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 95    ;
+; I/O pins                                    ; 77    ;
 ; Total memory bits                           ; 57600 ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Total PLLs                                  ; 1     ;
 ;     -- PLLs                                 ; 1     ;
 ;                                             ;       ;
-; Maximum fan-out                             ; 75    ;
-; Total fan-out                               ; 1634  ;
-; Average fan-out                             ; 3.08  ;
+; Maximum fan-out                             ; 66    ;
+; Total fan-out                               ; 1777  ;
+; Average fan-out                             ; 3.40  ;
 +---------------------------------------------+-------+
 
 
@@ -271,30 +267,32 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                             ; Library Name ;
 +------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |cpu_vga                                                   ; 315 (1)           ; 105 (0)      ; 57600       ; 0            ; 0       ; 0         ; 95   ; 0            ; |cpu_vga                                                                                                                                        ;              ;
-;    |cpu:cpu_|                                              ; 233 (0)           ; 75 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_                                                                                                                               ;              ;
-;       |e_s:e_s_|                                           ; 42 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_                                                                                                                      ;              ;
+; |cpu_vga                                                   ; 346 (1)           ; 83 (0)       ; 57600       ; 0            ; 0       ; 0         ; 77   ; 0            ; |cpu_vga                                                                                                                                        ;              ;
+;    |cpu:cpu_|                                              ; 256 (0)           ; 53 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_                                                                                                                               ;              ;
+;       |e_s:e_s_|                                           ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_                                                                                                                      ;              ;
 ;          |mux_out:mux_salida|                              ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|mux_out:mux_salida                                                                                                   ;              ;
-;          |reg_e:sal1|                                      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|reg_e:sal1                                                                                                           ;              ;
-;          |reg_e:sal2|                                      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|reg_e:sal2                                                                                                           ;              ;
-;       |microc:microc_|                                     ; 181 (0)           ; 75 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_                                                                                                                ;              ;
-;          |alu:alu_|                                        ; 60 (60)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|alu:alu_                                                                                                       ;              ;
-;          |memprog:memoria_|                                ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|memprog:memoria_                                                                                               ;              ;
-;          |mux1:mux4_|                                      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|mux1:mux4_                                                                                                     ;              ;
-;          |mux1:mux5_|                                      ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|mux1:mux5_                                                                                                     ;              ;
-;          |mux2:mux3_|                                      ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|mux2:mux3_                                                                                                     ;              ;
-;          |regfile:banco_|                                  ; 57 (57)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|regfile:banco_                                                                                                 ;              ;
+;          |reg_e:sal1|                                      ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|reg_e:sal1                                                                                                           ;              ;
+;          |reg_e:sal3|                                      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|reg_e:sal3                                                                                                           ;              ;
+;       |microc:microc_|                                     ; 195 (0)           ; 53 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_                                                                                                                ;              ;
+;          |alu:alu_|                                        ; 61 (61)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|alu:alu_                                                                                                       ;              ;
+;          |memprog:memoria_|                                ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|memprog:memoria_                                                                                               ;              ;
+;          |mux1:mux4_|                                      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|mux1:mux4_                                                                                                     ;              ;
+;          |mux1:mux5_|                                      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|mux1:mux5_                                                                                                     ;              ;
+;          |mux2:mux3_|                                      ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|mux2:mux3_                                                                                                     ;              ;
+;          |regfile:banco_|                                  ; 30 (30)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|regfile:banco_                                                                                                 ;              ;
 ;          |registro:PC_|                                    ; 4 (4)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|registro:PC_                                                                                                   ;              ;
 ;          |registro:ffzero|                                 ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|registro:ffzero                                                                                                ;              ;
+;          |retorno_reg:sub_reg|                             ; 10 (10)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|retorno_reg:sub_reg                                                                                            ;              ;
 ;          |sum:sumador_|                                    ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|sum:sumador_                                                                                                   ;              ;
-;       |uc:uc_|                                             ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|uc:uc_                                                                                                                        ;              ;
-;    |vga:vga_|                                              ; 81 (0)            ; 30 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_                                                                                                                               ;              ;
-;       |vga_adapter:VGA_ADAPTER|                            ; 81 (0)            ; 30 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER                                                                                                       ;              ;
+;       |uc:uc_|                                             ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|uc:uc_                                                                                                                        ;              ;
+;    |vga:vga_|                                              ; 89 (3)            ; 30 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_                                                                                                                               ;              ;
+;       |vga_adapter:VGA_ADAPTER|                            ; 86 (1)            ; 30 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER                                                                                                       ;              ;
 ;          |altsyncram:VideoMemory|                          ; 11 (0)            ; 6 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|altsyncram:VideoMemory                                                                                ;              ;
 ;             |altsyncram_ncg1:auto_generated|               ; 11 (0)            ; 6 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated                                                 ;              ;
 ;                |altsyncram_n6r1:altsyncram1|               ; 11 (0)            ; 6 (6)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1                     ;              ;
 ;                   |decode_6oa:decode_a|                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a ;              ;
 ;                   |mux_hib:mux5|                           ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|mux_hib:mux5        ;              ;
+;          |vga_address_translator:user_input_translator|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|vga_address_translator:user_input_translator                                                          ;              ;
 ;          |vga_controller:controller|                       ; 70 (52)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|vga_controller:controller                                                                             ;              ;
 ;             |vga_address_translator:controller_translator| ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|vga_controller:controller|vga_address_translator:controller_translator                                ;              ;
 ;          |vga_pll:mypll|                                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|vga_pll:mypll                                                                                         ;              ;
@@ -334,14 +332,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cpu:cpu_|e_s:e_s_|reg_e:sal1|q[5]                   ; cpu:cpu_|uc:uc_|rwe1                         ; yes                    ;
 ; cpu:cpu_|e_s:e_s_|reg_e:sal1|q[6]                   ; cpu:cpu_|uc:uc_|rwe1                         ; yes                    ;
 ; cpu:cpu_|e_s:e_s_|reg_e:sal1|q[7]                   ; cpu:cpu_|uc:uc_|rwe1                         ; yes                    ;
-; cpu:cpu_|e_s:e_s_|reg_e:sal2|q[0]                   ; cpu:cpu_|uc:uc_|rwe2                         ; yes                    ;
-; cpu:cpu_|e_s:e_s_|reg_e:sal2|q[1]                   ; cpu:cpu_|uc:uc_|rwe2                         ; yes                    ;
-; cpu:cpu_|e_s:e_s_|reg_e:sal2|q[2]                   ; cpu:cpu_|uc:uc_|rwe2                         ; yes                    ;
-; cpu:cpu_|e_s:e_s_|reg_e:sal2|q[3]                   ; cpu:cpu_|uc:uc_|rwe2                         ; yes                    ;
-; cpu:cpu_|e_s:e_s_|reg_e:sal2|q[4]                   ; cpu:cpu_|uc:uc_|rwe2                         ; yes                    ;
-; cpu:cpu_|e_s:e_s_|reg_e:sal2|q[5]                   ; cpu:cpu_|uc:uc_|rwe2                         ; yes                    ;
-; cpu:cpu_|e_s:e_s_|reg_e:sal2|q[6]                   ; cpu:cpu_|uc:uc_|rwe2                         ; yes                    ;
-; cpu:cpu_|e_s:e_s_|reg_e:sal2|q[7]                   ; cpu:cpu_|uc:uc_|rwe2                         ; yes                    ;
+; cpu:cpu_|e_s:e_s_|reg_e:sal3|q[0]                   ; cpu:cpu_|uc:uc_|rwe3                         ; yes                    ;
+; cpu:cpu_|e_s:e_s_|reg_e:sal3|q[1]                   ; cpu:cpu_|uc:uc_|rwe3                         ; yes                    ;
+; cpu:cpu_|e_s:e_s_|reg_e:sal3|q[2]                   ; cpu:cpu_|uc:uc_|rwe3                         ; yes                    ;
+; cpu:cpu_|e_s:e_s_|reg_e:sal3|q[3]                   ; cpu:cpu_|uc:uc_|rwe3                         ; yes                    ;
+; cpu:cpu_|e_s:e_s_|reg_e:sal3|q[4]                   ; cpu:cpu_|uc:uc_|rwe3                         ; yes                    ;
+; cpu:cpu_|e_s:e_s_|reg_e:sal3|q[5]                   ; cpu:cpu_|uc:uc_|rwe3                         ; yes                    ;
+; cpu:cpu_|e_s:e_s_|reg_e:sal3|q[6]                   ; cpu:cpu_|uc:uc_|rwe3                         ; yes                    ;
+; cpu:cpu_|e_s:e_s_|reg_e:sal3|q[7]                   ; cpu:cpu_|uc:uc_|rwe3                         ; yes                    ;
 ; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[0]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
 ; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[1]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
 ; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[2]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
@@ -350,91 +348,122 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[5]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
 ; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[6]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
 ; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[7]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
-; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[0]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
-; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[1]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
-; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[2]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
-; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[3]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
-; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[4]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
-; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[5]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
-; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[6]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
-; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[7]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
+; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[0]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
+; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[1]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
+; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[2]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
+; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[3]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
+; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[4]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
+; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[5]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
+; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[6]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
+; cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[7]          ; cpu:cpu_|microc:microc_|memprog:memoria_|mem ; yes                    ;
 ; Number of user-specified and inferred latches = 32  ;                                              ;                        ;
 +-----------------------------------------------------+----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                       ;
-+-----------------------------------------------------+--------------------+
-; Register name                                       ; Reason for Removal ;
-+-----------------------------------------------------+--------------------+
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~64      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~65      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~66      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~67      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~68      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~69      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~70      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~71      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~72      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~73      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~74      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~75      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~76      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~77      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~78      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~79      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~80      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~81      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~82      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~83      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~84      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~85      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~86      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~87      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~88      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~89      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~90      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~91      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~92      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~93      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~94      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~95      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~96      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~97      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~98      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~99      ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~100     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~101     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~102     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~103     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~104     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~105     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~106     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~107     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~108     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~109     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~110     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~111     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~112     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~113     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~114     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~115     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~116     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~117     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~118     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~119     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~120     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~121     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~122     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~123     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~124     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~125     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~126     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|regfile:banco_|regb~127     ; Lost fanout        ;
-; cpu:cpu_|microc:microc_|retorno_reg:sub_reg|q[0..9] ; Lost fanout        ;
-; Total Number of Removed Registers = 74              ;                    ;
-+-----------------------------------------------------+--------------------+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++-------------------------------------------------+----------------------------------------+
+; Register name                                   ; Reason for Removal                     ;
++-------------------------------------------------+----------------------------------------+
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~16  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~24  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~32  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~40  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~48  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~56  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~80  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~88  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~96  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~104 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~112 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~120 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~17  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~25  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~33  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~41  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~49  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~57  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~81  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~89  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~97  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~105 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~113 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~121 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~18  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~26  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~34  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~42  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~50  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~58  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~82  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~90  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~98  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~106 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~114 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~122 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~19  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~27  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~35  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~43  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~51  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~59  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~83  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~91  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~99  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~107 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~115 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~123 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~20  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~28  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~36  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~44  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~52  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~60  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~84  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~92  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~100 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~108 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~116 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~124 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~21  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~29  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~37  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~45  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~53  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~61  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~85  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~93  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~101 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~109 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~117 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~125 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~22  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~30  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~38  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~46  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~54  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~62  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~86  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~94  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~102 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~110 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~118 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~126 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~23  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~31  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~39  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~47  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~55  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~63  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~87  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~95  ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~103 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~111 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~119 ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu_|microc:microc_|regfile:banco_|regb~127 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 96          ;                                        ;
++-------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -442,12 +471,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 105   ;
+; Total registers                              ; 83    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 31    ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 41    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -457,13 +486,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|vga_controller:controller|yCounter[8] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |cpu_vga|cpu:cpu_|microc:microc_|registro:PC_|q[3]                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cpu_vga|cpu:cpu_|microc:microc_|registro:PC_|q[0]                              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu_vga|cpu:cpu_|microc:microc_|mux2:mux3_|y[4]                                ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu_vga|cpu:cpu_|microc:microc_|mux2:mux3_|y[1]                                ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |cpu_vga|vga:vga_|vga_adapter:VGA_ADAPTER|vga_controller:controller|yCounter[2] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |cpu_vga|cpu:cpu_|microc:microc_|registro:PC_|q[2]                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cpu_vga|cpu:cpu_|microc:microc_|registro:PC_|q[1]                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |cpu_vga|cpu:cpu_|microc:microc_|mux2:mux3_|y[7]                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |cpu_vga|cpu:cpu_|microc:microc_|mux2:mux3_|y[2]                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |cpu_vga|cpu:cpu_|microc:microc_|mux2:mux3_|y[0]                                ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |cpu_vga|cpu:cpu_|microc:microc_|alu:alu_|Mux1                                  ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 8 LEs                ; 14 LEs                 ; No         ; |cpu_vga|cpu:cpu_|uc:uc_|rwe2                                                   ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |cpu_vga|cpu:cpu_|microc:microc_|alu:alu_|Add0                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 
@@ -1167,18 +1196,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "vga:vga_"                                                                                                                                                                                ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; colour[1..0] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                     ;
-; colour[2]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
-; y            ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (7 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; VGA_BLANK    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
-; VGA_SYNC     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
-; VGA_CLK      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga:vga_"                                                                                                                                                                                  ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                                            ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; colour[1..0] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; colour[2]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; y            ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (7 bits) it drives.  The 25 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; y[2..0]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; y[6..3]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; VGA_BLANK    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
+; VGA_SYNC     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
+; VGA_CLK      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1229,7 +1260,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jul  6 20:13:05 2015
+    Info: Processing started: Wed Jul  8 10:08:27 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off scpu -c scpu
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /home/alumno/Escritorio/scpu/modules/printvga.v
@@ -1273,18 +1304,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/a
 Info (12021): Found 1 design units, including 1 entities, in source file /home/alumno/Escritorio/scpu/modules/uc.v
     Info (12023): Found entity 1: uc
 Info (12127): Elaborating entity "cpu_vga" for the top level hierarchy
-Warning (10034): Output port "VGA_BLANK" at cpu_vga.v(19) has no driver
-Warning (10034): Output port "VGA_SYNC" at cpu_vga.v(20) has no driver
-Warning (10034): Output port "VGA_CLK" at cpu_vga.v(21) has no driver
+Warning (10034): Output port "VGA_BLANK" at cpu_vga.v(17) has no driver
+Warning (10034): Output port "VGA_SYNC" at cpu_vga.v(18) has no driver
+Warning (10034): Output port "VGA_CLK" at cpu_vga.v(19) has no driver
 Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu_"
-Warning (10036): Verilog HDL or VHDL warning at cpu.v(20): object "vga_e" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu.v(16): object "s42" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu.v(16): object "e42" assigned a value but never read
 Info (12128): Elaborating entity "uc" for hierarchy "cpu:cpu_|uc:uc_"
 Info (12128): Elaborating entity "microc" for hierarchy "cpu:cpu_|microc:microc_"
 Info (12128): Elaborating entity "mux1" for hierarchy "cpu:cpu_|microc:microc_|mux1:mux1_"
 Info (12128): Elaborating entity "registro" for hierarchy "cpu:cpu_|microc:microc_|registro:PC_"
 Info (12128): Elaborating entity "sum" for hierarchy "cpu:cpu_|microc:microc_|sum:sumador_"
 Info (12128): Elaborating entity "memprog" for hierarchy "cpu:cpu_|microc:microc_|memprog:memoria_"
-Warning (10850): Verilog HDL warning at memprog.v(11): number of words (6) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10850): Verilog HDL warning at memprog.v(11): number of words (29) in memory file does not match the number of elements in the address range [0:1023]
 Warning (10030): Net "mem.data_a" at memprog.v(7) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "mem.waddr_a" at memprog.v(7) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "mem.we_a" at memprog.v(7) has no driver or initial value, using a default initial value '0'
@@ -1296,17 +1328,6 @@ Warning (10230): Verilog HDL assignment warning at alu.v(20): truncated value wi
 Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu_|microc:microc_|mux2:mux2_"
 Info (12128): Elaborating entity "registro" for hierarchy "cpu:cpu_|microc:microc_|registro:ffzero"
 Info (12128): Elaborating entity "retorno_reg" for hierarchy "cpu:cpu_|microc:microc_|retorno_reg:sub_reg"
-Info (12128): Elaborating entity "regtovga" for hierarchy "cpu:cpu_|microc:microc_|regtovga:regtovga_"
-Warning (10240): Verilog HDL Always Construct warning at regtovga.v(11): inferring latch(es) for variable "aux", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "aux[0]" at regtovga.v(13)
-Info (10041): Inferred latch for "aux[1]" at regtovga.v(13)
-Info (10041): Inferred latch for "aux[2]" at regtovga.v(13)
-Info (10041): Inferred latch for "aux[3]" at regtovga.v(13)
-Info (12128): Elaborating entity "memvga" for hierarchy "cpu:cpu_|microc:microc_|memvga:memvga_"
-Warning (10030): Net "mem.data_a" at memvga.v(7) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "mem.waddr_a" at memvga.v(7) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "mem.we_a" at memvga.v(7) has no driver or initial value, using a default initial value '0'
-Info (12128): Elaborating entity "printvga" for hierarchy "cpu:cpu_|microc:microc_|printvga:printvga_"
 Info (12128): Elaborating entity "e_s" for hierarchy "cpu:cpu_|e_s:e_s_"
 Info (12128): Elaborating entity "mux_in" for hierarchy "cpu:cpu_|e_s:e_s_|mux_in:mux_entrada"
 Warning (10230): Verilog HDL assignment warning at componentes.v(101): truncated value with size 32 to match size of target (8)
@@ -1358,8 +1379,6 @@ Info (10041): Inferred latch for "q[5]" at componentes.v(81)
 Info (10041): Inferred latch for "q[6]" at componentes.v(81)
 Info (10041): Inferred latch for "q[7]" at componentes.v(81)
 Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_"
-Warning (10230): Verilog HDL assignment warning at vga.v(13): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at vga.v(14): truncated value with size 32 to match size of target (7)
 Warning (10034): Output port "VGA_BLANK" at vga.v(8) has no driver
 Warning (10034): Output port "VGA_SYNC" at vga.v(8) has no driver
 Warning (10034): Output port "VGA_CLK" at vga.v(8) has no driver
@@ -1416,69 +1435,71 @@ Info (12128): Elaborating entity "vga_controller" for hierarchy "vga:vga_|vga_ad
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "cpu:cpu_|microc:microc_|regfile:banco_|regb" is uninferred due to asynchronous read logic
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/alumno/Escritorio/scpu/scpu/db/scpu.ram0_memprog_5f24dd89.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[0]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[1]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[2]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[3]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[4]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[5]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[6]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[7]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d3[0]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d3[1]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d3[2]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d3[3]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d3[4]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d3[5]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d3[6]" is permanently disabled
-Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d3[7]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal2|q[0]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal2|q[1]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal2|q[2]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal2|q[3]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal2|q[4]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal2|q[5]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal2|q[6]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal2|q[7]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal4|q[0]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal4|q[1]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal4|q[2]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal4|q[3]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal4|q[4]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal4|q[5]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal4|q[6]" is permanently disabled
+Warning (14025): LATCH primitive "cpu:cpu_|e_s:e_s_|reg_e:sal4|q[7]" is permanently disabled
 Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
+    Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
     Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
     Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
     Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
     Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
 Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
-Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
-Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
-Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
-Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
-Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
-Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
-Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
-Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d1[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
+Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
+Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
+Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
+Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
+Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
+Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
+Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
+Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d2[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[8]
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "s3[0]" is stuck at GND
-    Warning (13410): Pin "s3[1]" is stuck at GND
-    Warning (13410): Pin "s3[2]" is stuck at GND
-    Warning (13410): Pin "s3[3]" is stuck at GND
-    Warning (13410): Pin "s3[4]" is stuck at GND
-    Warning (13410): Pin "s3[5]" is stuck at GND
-    Warning (13410): Pin "s3[6]" is stuck at GND
-    Warning (13410): Pin "s3[7]" is stuck at GND
+    Warning (13410): Pin "s2[0]" is stuck at GND
+    Warning (13410): Pin "s2[1]" is stuck at GND
+    Warning (13410): Pin "s2[2]" is stuck at GND
+    Warning (13410): Pin "s2[3]" is stuck at GND
+    Warning (13410): Pin "s2[4]" is stuck at GND
+    Warning (13410): Pin "s2[5]" is stuck at GND
+    Warning (13410): Pin "s2[6]" is stuck at GND
+    Warning (13410): Pin "s2[7]" is stuck at GND
     Warning (13410): Pin "s4[0]" is stuck at GND
     Warning (13410): Pin "s4[1]" is stuck at GND
     Warning (13410): Pin "s4[2]" is stuck at GND
@@ -1487,27 +1508,9 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "s4[5]" is stuck at GND
     Warning (13410): Pin "s4[6]" is stuck at GND
     Warning (13410): Pin "s4[7]" is stuck at GND
-    Warning (13410): Pin "vgax[0]" is stuck at GND
-    Warning (13410): Pin "vgax[1]" is stuck at GND
-    Warning (13410): Pin "vgax[2]" is stuck at GND
-    Warning (13410): Pin "vgax[3]" is stuck at GND
-    Warning (13410): Pin "vgax[4]" is stuck at GND
-    Warning (13410): Pin "vgax[5]" is stuck at GND
-    Warning (13410): Pin "vgax[6]" is stuck at GND
-    Warning (13410): Pin "vgax[7]" is stuck at GND
-    Warning (13410): Pin "vgay[0]" is stuck at GND
-    Warning (13410): Pin "vgay[1]" is stuck at GND
-    Warning (13410): Pin "vgay[2]" is stuck at GND
-    Warning (13410): Pin "vgay[3]" is stuck at GND
-    Warning (13410): Pin "vgay[4]" is stuck at GND
-    Warning (13410): Pin "vgay[5]" is stuck at GND
-    Warning (13410): Pin "vgay[6]" is stuck at GND
-    Warning (13410): Pin "vgay[7]" is stuck at GND
-    Warning (13410): Pin "vgaw" is stuck at VCC
     Warning (13410): Pin "VGA_BLANK" is stuck at GND
     Warning (13410): Pin "VGA_SYNC" is stuck at GND
     Warning (13410): Pin "VGA_CLK" is stuck at GND
-Info (17049): 74 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored assignments for entity "vga_demo" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity vga_demo -section_id "Root Region" was ignored
     Warning (20014): Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity vga_demo -section_id "Root Region" was ignored
@@ -1537,18 +1540,25 @@ Warning (20013): Ignored assignments for entity "vga_demo" -- entity does not ex
 Info (144001): Generated suppressed messages file /home/alumno/Escritorio/scpu/scpu/output_files/scpu.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "vgae"
-Info (21057): Implemented 498 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 22 input pins
-    Info (21059): Implemented 73 output pins
-    Info (21061): Implemented 387 logic cells
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "e4[0]"
+    Warning (15610): No output dependent on input pin "e4[1]"
+    Warning (15610): No output dependent on input pin "e4[2]"
+    Warning (15610): No output dependent on input pin "e4[3]"
+    Warning (15610): No output dependent on input pin "e4[4]"
+    Warning (15610): No output dependent on input pin "e4[5]"
+    Warning (15610): No output dependent on input pin "e4[6]"
+    Warning (15610): No output dependent on input pin "e4[7]"
+Info (21057): Implemented 479 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 56 output pins
+    Info (21061): Implemented 386 logic cells
     Info (21064): Implemented 15 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 148 warnings
-    Info: Peak virtual memory: 337 megabytes
-    Info: Processing ended: Mon Jul  6 20:13:11 2015
-    Info: Elapsed time: 00:00:06
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 135 warnings
+    Info: Peak virtual memory: 341 megabytes
+    Info: Processing ended: Wed Jul  8 10:08:32 2015
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 
 

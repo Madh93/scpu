@@ -8,10 +8,16 @@ module vga(
             output VGA_HS, VGA_VS, VGA_BLANK, VGA_SYNC, VGA_CLK);
 
 
+  // wire [7:0] x_;
+  // wire [6:0] y_;
+  // assign x_ = x + 8;  // Comenzar dentro de los margenes
+  // assign y_ = y + 20;
+
+
   wire [7:0] x_;
   wire [6:0] y_;
-  assign x_ = x + 8;  // Comenzar dentro de los margenes
-  assign y_ = y + 20;
+  assign x_ = x + 8'b00011000;  // Comenzar dentro de los margenes
+  assign y_ = y ;//+ 7'b0000110;
 
 
   // reg [7:0] contador;

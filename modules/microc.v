@@ -1,6 +1,5 @@
-module microc(input wire clk, reset, input wire vgae, vgae2,s_inc, s_inm, we3, s_es, s_rel, swe, s_ret, input wire [2:0] op, input wire [7:0] data_in, 
-              output wire z, output wire [5:0] opcode, output wire [7:0] data_mem, data_reg, output wire [1:0] id_in, id_out,
-              output wire [7:0] vgax, vgay, output wire vgaw);  //Es necesario añadir nuevas señales de control
+module microc(input wire clk, reset, s_inc, s_inm, we3, s_es, s_rel, swe, s_ret, input wire [2:0] op, input wire [7:0] data_in,
+              output wire z, output wire [5:0] opcode, output wire [7:0] data_mem, data_reg, output wire [1:0] id_in, id_out);  //Es necesario añadir nuevas señales de control
 
   //Cables
   wire [9:0] mux1_pc;
@@ -56,8 +55,8 @@ module microc(input wire clk, reset, input wire vgae, vgae2,s_inc, s_inm, we3, s
 
 
   //Controlar VGA
-  regtovga regtovga_(clk, vgae2, rd1, num);
-  memvga memvga_(clk, num, num_vga);
-  printvga printvga_(clk, reset, vgae2, num_vga, vgax, vgay, vgaw);  
+  //regtovga regtovga_(clk, vgae2, rd1, num);
+  //memvga memvga_(clk, s42[4:0], e4);
+  //printvga printvga_(clk, reset, vgae2, num_vga, vgax, vgay, vgaw);  
 
 endmodule

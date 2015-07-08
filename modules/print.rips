@@ -3,12 +3,48 @@ main:
     #lesr $1, @0     #cargamos en registro el primer valor de la e/s
     #lesr $2, @1     #cargamos en registro el segundo valor de la e/s
     #lesr $3, @2     #cargamos en registro el operador desde la e/s
-    sesr @1, $0
+    #sesr @1, $0
+    #sesm @2, 0
+    #sesm @2, 0
 
-    li $4, 4
-    li $5, 3
-    li $6, 6
+    li $1, 1
 
-    print $5
-    
+    sesr @2, $0
+    sesm @0, 0
+    #sesm @1, 0
+    sesr @2, $1
+
+    sesr @2, $0
+    sesm @0, 1
+    sesr @2, $1
+
+    sesr @2, $0
+    sesm @0, 2
+    sesr @2, $1
+
+    sesr @2, $0
+    sesm @0, 3
+    sesr @2, $1
+
+    sesr @2, $0
+    sesm @0, 4
+    sesr @2, $1
+
+    sesr @2, $0
+    sesm @0, 5
+    sesr @2, $1
+
+    sesr @2, $0
+    sesm @0, 6
+    sesr @2, $1
+
+    sesr @2, $0
+    sesm @0, 7
+    sesr @2, $1
+
+    sesr @2, $0
+    sesm @0, 8
+    sesr @2, $1
+
+
     j main

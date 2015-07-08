@@ -1,10 +1,10 @@
 //Memoria de VGA
 
 module memvga(input  wire clk,
-               input  wire [3:0] ra,
-               output wire [15:0] rd);
+               input  wire [4:0] ra,
+               output wire [7:0] rd);
 
-  reg [15:0] mem[0:15]; //memoria de 16 palabras (0123456789+-*/=!) de 16 bits de ancho (3*5+1)
+  reg [7:0] mem[0:31]; //memoria de 32 palabras (0123456789+-*/=!) de 8 bits de ancho (3*5+1)/2
   // reg i;
 
   initial
