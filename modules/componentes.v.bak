@@ -15,8 +15,8 @@ module regfile(input  wire        clk,
   always @(posedge clk)
     if (we3) regb[wa3] <= wd3;	
   
-  assign rd1 = (ra1 != 0) ? regb[ra1] : 8'b00000000;
-  assign rd2 = (ra2 != 0) ? regb[ra2] : 8'b00000000;
+  assign rd1 = (ra1 != 0) ? regb[ra1] : 0;
+  assign rd2 = (ra2 != 0) ? regb[ra2] : 0;
 endmodule
 
 //modulo sumador  
@@ -77,8 +77,7 @@ module reg_e #(parameter WIDTH = 8)
 
   //$display("******: %d", d);
 
-  always @(posedge clk, posedge reset)
-  // always @(*)
+  always @(*)
     if (reset) q <= 0;
     else if (rwe) q <= d;
 endmodule
@@ -99,7 +98,7 @@ module mux_in #(parameter WIDTH = 8)
         2'b01: aux = d1;
         2'b10: aux = d2;
         2'b11: aux = d3;
-        default: aux = 8'bxxxxxxxx; //desconocido en cualquier otro caso (x � z), por si se modifica el c�digo
+        default: aux = 'bx; //desconocido en cualquier otro caso (x � z), por si se modifica el c�digo
       endcase
     end                 
 
@@ -110,33 +109,16 @@ endmodule
 //modulo multiplexor de entrada 2-4 del MicroC
 module mux_out #(parameter WIDTH = 8)
              (input  wire [WIDTH-1:0] e0, e1, 
-              input  wire             s, enable, 
+              input  wire             s, 
               input  wire [1:0]       reg_, 
               output reg [WIDTH-1:0] d0, d1, d2, d3 );
 
-  // wire [7:0] aux;   
-  // assign aux = s ? e1 : e0;
-
-  // always @(reg_,aux)
-
-  // always @(posedge enable)
-  // begin
-  //   if (enable)
-  //   begin
-  //     case (reg_)
-  //       2'b00: d0 = (s) ? e1 : e0;
-  //       2'b01: d1 = (s) ? e1 : e0;
-  //       2'b10: d2 = (s) ? e1 : e0;
-  //       2'b11: d3 = (s) ? e1 : e0;
-  //     endcase
-  //   end
-  // end
-
-  wire [7:0] aux;
+  wire [7:0] aux;   
   assign aux = s ? e1 : e0;
+
   always @(reg_,aux)
   begin
-    case (reg_)
+    case (reg_)              
       2'b00: d0 = aux;
       2'b01: d1 = aux;
       2'b10: d2 = aux;

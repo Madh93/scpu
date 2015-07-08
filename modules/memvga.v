@@ -5,7 +5,6 @@ module memvga(input  wire clk,
                output wire [7:0] rd);
 
   reg [7:0] mem[0:31]; //memoria de 32 palabras (0123456789+-*/=!) de 8 bits de ancho (3*5+1)/2
-  // reg i;
 
   initial
   begin
@@ -13,13 +12,7 @@ module memvga(input  wire clk,
   end
   assign rd = mem[ra];
 
-  // always @(ra,clk)
-  // begin
-  //   // for(i=0; i<15; i=i+1)
-  //   // begin
-  //     assign rd = mem[0];
-  //   // end
-  // end                 
+        
 
 
 endmodule

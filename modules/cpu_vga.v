@@ -32,7 +32,7 @@ module cpu_vga(
         .colour(3'b011),  //1 o 0 que lea desde la memoria
         .x(s1),  //salida2
         // .y(s2[6:0]),  //salida3
-        .y(7),  //salida3
+        .y(s2[6:0]),  //salida3
         .plot(s3[0]), //salida4 (equivalente al enable)
         // Signals for the DAC to drive the monitor.
         .VGA_R(VGA_R),
@@ -41,6 +41,6 @@ module cpu_vga(
         .VGA_HS(VGA_HS),
         .VGA_VS(VGA_VS));
 
-    //memvga memvga_(clk, s4[4:0], e4_2);
+    memvga memvga_(clk, s4[4:0], e4_2);
 
 endmodule
