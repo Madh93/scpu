@@ -1,0 +1,66 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x9ceba50 .scope module, "vga" "vga" 2 1;
+ .timescale 0 0;
+v0x9cebe68_0 .net "VGA_B", 3 0, C4<zzzz>; 0 drivers
+v0x9d0bba0_0 .net "VGA_BLANK", 0 0, C4<z>; 0 drivers
+v0x9d0bc00_0 .net "VGA_CLK", 0 0, C4<z>; 0 drivers
+v0x9d0bc60_0 .net "VGA_G", 3 0, C4<zzzz>; 0 drivers
+v0x9d0bcc8_0 .net "VGA_HS", 0 0, C4<z>; 0 drivers
+v0x9d0bd28_0 .net "VGA_R", 3 0, C4<zzzz>; 0 drivers
+v0x9d0bda8_0 .net "VGA_SYNC", 0 0, C4<z>; 0 drivers
+v0x9d0be08_0 .net "VGA_VS", 0 0, C4<z>; 0 drivers
+v0x9d0be90_0 .net *"_s0", 31 0, L_0x9d26450; 1 drivers
+v0x9d0bef0_0 .net *"_s11", 8 0, C4<000000000>; 1 drivers
+v0x9d0bf80_0 .net *"_s12", 16 0, C4<00000000000000101>; 1 drivers
+v0x9d0bfe0_0 .net *"_s14", 16 0, L_0x9d26690; 1 drivers
+v0x9d0c078_0 .net *"_s16", 16 0, C4<00000000000000101>; 1 drivers
+v0x9d0c0d8_0 .net *"_s19", 31 0, L_0x9d267c8; 1 drivers
+v0x9d0c178_0 .net *"_s20", 31 0, L_0x9d26888; 1 drivers
+v0x9d0c1d8_0 .net *"_s24", 31 0, L_0x9d269e8; 1 drivers
+v0x9d0c280_0 .net *"_s27", 24 0, C4<0000000000000000000000000>; 1 drivers
+v0x9d0c2e0_0 .net *"_s28", 31 0, C4<00000000000000000000000000011001>; 1 drivers
+v0x9d25bf8_0 .net *"_s3", 23 0, C4<000000000000000000000000>; 1 drivers
+v0x9d25c48_0 .net *"_s30", 31 0, L_0x9d26b50; 1 drivers
+v0x9d25ba8_0 .net *"_s32", 15 0, L_0x9d26c10; 1 drivers
+v0x9d25cf0_0 .net *"_s35", 7 0, C4<00000000>; 1 drivers
+v0x9d25c98_0 .net *"_s36", 15 0, C4<0000000000000101>; 1 drivers
+v0x9d25da0_0 .net *"_s38", 15 0, L_0x9d26d28; 1 drivers
+v0x9d25d40_0 .net *"_s4", 31 0, C4<00000000000000000000000000001010>; 1 drivers
+v0x9d25e58_0 .net *"_s40", 15 0, C4<0000000000001010>; 1 drivers
+v0x9d25e00_0 .net *"_s43", 31 0, L_0x9d26e40; 1 drivers
+v0x9d25f28_0 .net *"_s44", 31 0, L_0x9d26f38; 1 drivers
+v0x9d25eb8_0 .net *"_s6", 31 0, L_0x9d26510; 1 drivers
+v0x9d25ff0_0 .net *"_s8", 16 0, L_0x9d26598; 1 drivers
+v0x9d25f88_0 .net "clock", 0 0, C4<z>; 0 drivers
+v0x9d260c0_0 .net "colour", 2 0, C4<zzz>; 0 drivers
+v0x9d26050_0 .net "plot", 0 0, C4<z>; 0 drivers
+v0x9d26198_0 .net "pos", 7 0, C4<zzzzzzzz>; 0 drivers
+v0x9d26110_0 .net "reset", 0 0, C4<z>; 0 drivers
+v0x9d26278_0 .net "x", 7 0, C4<zzzzzzzz>; 0 drivers
+v0x9d261e8_0 .net "x_", 7 0, L_0x9d26960; 1 drivers
+v0x9d26360_0 .net "y", 6 0, C4<zzzzzzz>; 0 drivers
+v0x9d262c8_0 .net "y_", 6 0, L_0x9d26ff8; 1 drivers
+L_0x9d26450 .concat [ 8 24 0 0], C4<zzzzzzzz>, C4<000000000000000000000000>;
+L_0x9d26510 .arith/sum 32, L_0x9d26450, C4<00000000000000000000000000001010>;
+L_0x9d26598 .concat [ 8 9 0 0], C4<zzzzzzzz>, C4<000000000>;
+L_0x9d26690 .arith/mod 17, L_0x9d26598, C4<00000000000000101>;
+L_0x9d267c8 .arith/mult 32, L_0x9d26690, C4<00000000000000101>;
+L_0x9d26888 .arith/sum 32, L_0x9d26510, L_0x9d267c8;
+L_0x9d26960 .part L_0x9d26888, 0, 8;
+L_0x9d269e8 .concat [ 7 25 0 0], C4<zzzzzzz>, C4<0000000000000000000000000>;
+L_0x9d26b50 .arith/sum 32, L_0x9d269e8, C4<00000000000000000000000000011001>;
+L_0x9d26c10 .concat [ 8 8 0 0], C4<zzzzzzzz>, C4<00000000>;
+L_0x9d26d28 .arith/div 16, L_0x9d26c10, C4<0000000000000101>;
+L_0x9d26e40 .arith/mult 32, L_0x9d26d28, C4<0000000000001010>;
+L_0x9d26f38 .arith/sum 32, L_0x9d26b50, L_0x9d26e40;
+L_0x9d26ff8 .part L_0x9d26f38, 0, 7;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "vga.v";

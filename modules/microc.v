@@ -29,7 +29,7 @@ module microc(input wire clk, reset, s_inc, s_inm, we3, s_es, s_rel, swe, s_ret,
  continuous assignment of DataIO to  
 DataR register, with delay 0 *
 */ 
-wire [9:0] #(0) DataIO = DataR;  
+// wire [9:0] #(0) DataIO = DataR;
 
 
   //Enviar opcode a la UC

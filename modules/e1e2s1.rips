@@ -1,0 +1,258 @@
+################# CONSTANTES GLOBALES####################
+#sesm @2, 0  #DESACTIVAR PINTAR
+#asignamos unos opcodes a la suma, resta y multiplicacion
+#para compararlos con el operando de entrada
+li $5, 0    #operando asignado a la suma (00)       
+li $6, 1    #operando asignado a la resta (01)
+li $7, 2    #operando asignado a la multiplicacion (10)
+li $8, 3    #operando asignado a la division (11)
+li $9, 10
+li $11, 0
+li $12, 14
+
+# $9: constante a 10
+# $10: Registro a pintar
+# $11: Contador de Posicion
+# $12: mostrar el igual no mas way
+# $13: Valor a pintar
+# $14: Dato Caracter 1
+# $15: Dato Caracter 2
+
+main:
+
+
+    lesr $1, @0     #cargamos en registro el primer valor de la e/s
+    lesr $2, @1     #cargamos en registro el segundo valor de la e/s
+    lesr $3, @2     #cargamos en registro el operador desde la e/s
+
+    #move $10, $1
+    #jal print
+
+    #add $3, $3, $9  #Sumar 10 para cazar con simbolos
+    #move $10, $3
+    #jal print    
+    
+    #move $10, $2
+    #jal print    
+
+    sub $4, $3, $5  #comparamos en busca de la suma
+    bnez sumar
+    
+    sub $4, $3, $6  #comparamos en busca de la resta
+    bnez restar
+    
+    #sub $4, $3, $7  #comparamos en busca de la multiplicacion
+    #bnez multiplicar
+
+    #sub $4, $3, $8  #comparamos en busca de la division
+    #bnez dividir 
+    
+    j main
+    #j salir
+
+sumar:
+
+    add $4, $1, $2
+    j guardar
+
+restar:
+
+    sub $4, $1, $2
+    j guardar
+
+multiplicar:
+
+    move $4, $0
+    add $1, $1, $0  # si $1 == 0, no hacer bucle1
+    bnez guardar     
+
+bucle1:
+
+    add $4, $4, $2  #repetir tantas veces $1
+    sub $1, $1, $6  
+    beqz bucle1
+    j guardar
+
+dividir:
+
+    move $4, $0
+    lest $0, $1, $2     # si el $1 es menor -> z=0, si z igual a cero salir
+    beqz guardar         
+
+bucle2:
+
+    add $4, $4, $6  # sumar 1 unidad  
+    sub $1, $1, $2
+    lest $0, $1, $2     #si es no es menor -> z=1 por lo que repetir
+    bnez bucle2
+
+guardar:
+
+
+    #move $10, $12   # Mostrar el =
+    #jal print
+
+    #sesr @0, $4 #guardar en el puerto 0 de la e/s el registro 4
+    move $10, $1
+    jal print  
+    
+    add $3, $3, $9
+    nop
+    move $10, $3     
+    jal print    
+    
+    move $10, $2
+    jal print
+
+    move $10, $12   # Mostrar el =
+    jal print    
+    
+    move $10, $4
+    jal print   
+
+    j salir
+
+print:
+
+    ######## EXTRAER CARACTER ##############
+    add $14, $10, $10 # 1ª mitad del caracter
+    add $15, $14, $6 # 2ª mitad del caracter
+
+    sesr @3, $14
+    lesr $14, @3
+
+    sesr @3, $15
+    lesr $15, @3
+
+    sesr @3, $11
+
+    ############ 1ª Mitad ##################
+    #0 (0,0)
+    #srl $14, $14, $6
+    and $13, $14, $6
+    sesm @0, 0
+    sesm @1, 0
+    sesr @2, $13
+    sesm @2, 0
+
+    #1 (0,1)
+    srl $14, $14, $6
+    and $13, $14, $6  
+    sesm @0, 1
+    sesm @1, 0
+    sesr @2, $13
+    sesm @2, 0
+
+    #2 (0,2)
+    srl $14, $14, $6
+    and $13, $14, $6    
+    sesm @0, 2
+    sesm @1, 0
+    sesr @2, $13
+    sesm @2, 0
+
+    #3 (1,0)
+    srl $14, $14, $6
+    and $13, $14, $6    
+    sesm @0, 0
+    sesm @1, 1
+    sesr @2, $13
+    sesm @2, 0
+
+    #4 (1,1)
+    srl $14, $14, $6
+    and $13, $14, $6    
+    sesm @0, 1
+    sesm @1, 1
+    sesr @2, $13
+    sesm @2, 0
+
+    #5 (1,2)
+    srl $14, $14, $6
+    and $13, $14, $6    
+    sesm @0, 2
+    sesm @1, 1
+    sesr @2, $13
+    sesm @2, 0
+
+    #6 (2,0)
+    srl $14, $14, $6
+    and $13, $14, $6    
+    sesm @0, 0
+    sesm @1, 2
+    sesr @2, $13
+    sesm @2, 0    
+    ########################################
+
+    ############ 2ª Mitad ##################
+    #7 (2,1)
+    #srl $15, $15, $6
+    and $13, $15, $6  
+    sesm @0, 1
+    sesm @1, 2
+    sesr @2, $13
+    sesm @2, 0
+
+    #8 (2,2)
+    srl $15, $15, $6
+    and $13, $15, $6  
+    sesm @0, 2
+    sesm @1, 2
+    sesr @2, $13
+    sesm @2, 0
+
+    #9 (3,0)
+    srl $15, $15, $6
+    and $13, $15, $6  
+    sesm @0, 0
+    sesm @1, 3
+    sesr @2, $13
+    sesm @2, 0
+
+    #10 (3,1)
+    srl $15, $15, $6
+    and $13, $15, $6  
+    sesm @0, 1
+    sesm @1, 3
+    sesr @2, $13
+    sesm @2, 0
+
+    #11 (3,2)
+    srl $15, $15, $6
+    and $13, $15, $6  
+    sesm @0, 2
+    sesm @1, 3
+    sesr @2, $13
+    sesm @2, 0
+
+    #12 (4,0)
+    srl $15, $15, $6
+    and $13, $15, $6  
+    sesm @0, 0
+    sesm @1, 4
+    sesr @2, $13
+    sesm @2, 0  
+
+    #13 (4,1)
+    srl $15, $15, $6
+    and $13, $15, $6  
+    sesm @0, 1
+    sesm @1, 4
+    sesr @2, $13
+    sesm @2, 0
+
+    #14 (4,2)
+    srl $15, $15, $6
+    and $13, $15, $6    
+    sesm @0, 2
+    sesm @1, 4
+    sesr @2, $13
+    sesm @2, 0    
+    ########################################  
+
+    add $11, $11, $6    # Incrementar contador de posicion
+    jr  # Volver al flujo de ejecucion    
+
+salir:
+
+    nop

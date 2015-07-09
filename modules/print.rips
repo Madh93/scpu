@@ -1,3 +1,7 @@
+li $1, 0  #Pintar un 0
+li $9, 0  #CONTADOOOOOOOOOOR
+li $12, 16  #
+
 main:
 
   # $14 y $15: DATO CARACTER
@@ -5,14 +9,21 @@ main:
   # $13: VALOR A PINTAR
 
   ########## GLOBALES ##############
-  sesm @2, 0  #DESACTIVAR PINTAR
+  #sesm @2, 0  #DESACTIVAR PINTAR
   li $10, 1  #Constante
-  li $7, 7  #Constante
-  li $8, 8  #Constante
+  #li $7, 7  #Constante
+  #li $8, 8  #Constante
 
-  li $1, 1  #Pintar un 1
   ##################################
 
+  jal print
+  add $1, $1, $10 #mostrar siguiente
+  add $9, $9, $10 #INCREMENTAR CONTADOR
+  sub $0, $12, $9
+  bnez salir
+  j main
+
+print:
 
   ######## EXTRAER CARACTER ##############
   add $14, $1, $1 # 1ª mitad del caracter
@@ -24,13 +35,7 @@ main:
   sesr @3, $15
   lesr $15, @3
 
-  #sesr @0, $14
-  #sesr @0, $15
-  ########################################
-  jal print
-  j salir
-
-print:
+  sesr @3, $9
 
   ############ 1ª Mitad ##################
   #0 (0,0)

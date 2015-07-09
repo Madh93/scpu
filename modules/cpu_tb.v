@@ -64,7 +64,7 @@ module cpu_tb;
     reset = 1;
     #5
     reset = 0;
-    #10000
+    #30000
 
     $finish;
   end

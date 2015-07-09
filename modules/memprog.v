@@ -8,8 +8,8 @@ module memprog(input  wire clk,
 
   initial
   begin
-    // $readmemb("/home/alumno/Escritorio/scpu/modules/progfile.dat",mem); // inicializa la memoria del fichero en texto binario
-    $readmemb("/home/migue/Escritorio/scpu/modules/progfile.dat",mem); // inicializa la memoria del fichero en texto binario
+    $readmemb("/home/alumno/Escritorio/scpu/modules/progfile.dat",mem); // inicializa la memoria del fichero en texto binario
+    // $readmemb("/home/migue/Escritorio/scpu/modules/progfile.dat",mem); // inicializa la memoria del fichero en texto binario
   end
   assign rd = mem[a]; 
 endmodule
