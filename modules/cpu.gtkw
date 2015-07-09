@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
-[*] Thu Jul  9 07:58:45 2015
+[*] Thu Jul  9 13:17:29 2015
 [*]
 [dumpfile] "/home/migue/Escritorio/scpu/modules/cpu_tb.vcd"
-[dumpfile_mtime] "Thu Jul  9 00:51:39 2015"
-[dumpfile_size] 46773
+[dumpfile_mtime] "Thu Jul  9 13:17:07 2015"
+[dumpfile_size] 76799
 [savefile] "/home/migue/Escritorio/scpu/modules/cpu.gtkw"
-[timestart] 0
-[size] 1175 1028
+[timestart] 184000
+[size] 1651 1028
 [pos] -1 -1
-*-18.000000 271000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-20.000000 4560000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] cpu_tb.
 [treeopen] cpu_tb.cpu_vga_.
 [treeopen] cpu_tb.cpu_vga_.cpu_.
@@ -18,22 +18,23 @@
 [sst_width] 202
 [signals_width] 164
 [sst_expanded] 1
-[sst_vpaned_height] 587
+[sst_vpaned_height] 586
 @24
 cpu_tb.cpu_vga_.cpu_.microc_.memoria_.a[9:0]
 [color] 7
 cpu_tb.e1[7:0]
 cpu_tb.e2[7:0]
 cpu_tb.e3[7:0]
+@25
 cpu_tb.cpu_vga_.cpu_.e4[7:0]
 @28
 [color] 1
 cpu_tb.opcode[5:0]
 [color] 3
 cpu_tb.reset
+@24
 [color] 5
 cpu_tb.s1[7:0]
-@24
 [color] 5
 cpu_tb.s2[7:0]
 [color] 5
