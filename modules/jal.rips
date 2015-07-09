@@ -1,0 +1,33 @@
+main:
+
+  li $1, 1
+  li $2, 2
+  li $3, 3
+  li $4, 4
+  li $5, 5
+
+  jal eta1
+  jal eta2
+  jal eta3
+  jal eta4
+  j main
+
+eta1:
+
+  add $1, $1, $1
+  jr
+
+eta2:
+
+  add $2, $2, $2
+  jr
+
+eta3:
+
+  add $3, $3, $3
+  jr
+
+eta4:
+
+  add $4, $4, $4
+  jr

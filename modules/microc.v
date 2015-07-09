@@ -18,7 +18,19 @@ module microc(input wire clk, reset, s_inc, s_inm, we3, s_es, s_rel, swe, s_ret,
 
   //Cables VGA
   wire [3:0] num;  
-  wire [15:0] num_vga;  
+  wire [15:0] num_vga;
+
+
+// reg [9:0] DataR;  
+// reg Push, Pop, Reset;  
+// wire Full, Empty, Err;  
+// wire [1:0] SP;  
+/*
+ continuous assignment of DataIO to  
+DataR register, with delay 0 *
+*/ 
+wire [9:0] #(0) DataIO = DataR;  
+
 
   //Enviar opcode a la UC
   assign opcode = memprog[5:0];
@@ -49,8 +61,14 @@ module microc(input wire clk, reset, s_inc, s_inm, we3, s_es, s_rel, swe, s_ret,
   
   //Adicionales
   mux1 #(10) mux4_(1, memprog[15:6], s_rel, mux4_sum);
+  
   retorno_reg #(10) sub_reg(swe, reset, mux_subreg, sub_mux5);
+  // retorno_reg #(10) sub_reg(push, pop, reset, mux_subreg, sub_mux5);
+  //stack stack_(mux_subreg, reset, swe, s_ret, SP, full, empty, err); 
+
+
   mux1 #(10) mux5_(mux1_pc, sub_mux5, s_ret, mux5_pc);
+  // mux1 #(10) mux5_(mux1_pc, DataR, s_ret, mux5_pc);
   sum sumador2(1, pc_memprog, mux_subreg);
 
 

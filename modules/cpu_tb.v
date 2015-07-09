@@ -11,13 +11,9 @@
 `include "regtovga.v"
 `include "uc.v"
 
-
 `include "cpu_vga.v"
 `include "vga.v"
-// `include "vga_adapter/vga_adapter.v"
-// `include "vga_adapter/vga_address_translator.v"
-// `include "vga_adapter/vga_controller.v"
-// `include "vga_adapter/vga_pll.v"
+`include "stack.v"
 
 module cpu_tb;
 
@@ -58,17 +54,17 @@ module cpu_tb;
     $dumpfile("cpu_tb.vcd"); 
     $dumpvars;
 
-    e1 = 8'b00000011; //1
-    e2 = 8'b00000011; //8
-    e3 = 8'b00000000; //5
-    e4 = 8'b00000000; //128
+    e1 = 8'b00000100; //4
+    e2 = 8'b00000011; //3
+    e3 = 8'b00000000; //0
+    e4 = 8'b00000000; //0
 
     vgae=0;
 
     reset = 1;
     #5
     reset = 0;
-    #5000
+    #10000
 
     $finish;
   end
@@ -76,6 +72,6 @@ module cpu_tb;
   //cpu cpu_(clk,~reset,vgae,e1,e2,e3,e4,s1,s2,s3,s4,opcode,z);
   
 
-  cpu_vga cpu_vga_(clk,~reset,e1,e2,e3,e4,CLOCK,s1,s2,s3,s4,opcode,z,VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS, VGA_BLANK,VGA_SYNC,VGA_CLK);
+  cpu_vga cpu_vga_(clk,~reset,e1,e2,e3,CLOCK,s1,s2,s3,s4,opcode,z,VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS, VGA_BLANK,VGA_SYNC,VGA_CLK);
   
 endmodule

@@ -4,7 +4,7 @@ module cpu_vga(
         input wire [3:0] e1, 
         input wire [3:0] e2, 
         input wire [1:0] e3,
-        input wire [7:0] e4,
+        // input wire [7:0] e4,
         input VGA_CLOCK, 
         output wire [7:0] s1,s2,s3,s4, 
         output wire [5:0] opcode, 
@@ -19,10 +19,10 @@ module cpu_vga(
         output VGA_CLK);
 
 
-  wire [7:0] e4_2;     
+  wire [7:0] e4;     
 
 
-  cpu cpu_(clk, reset, e1, e2, e3, e4_2, s1, s2, s3, s4, opcode, z);
+  cpu cpu_(clk, reset, e1, e2, e3, e4, s1, s2, s3, s4, opcode, z);
 
   // vga vga_(reset, VGA_CLOCK, 0, 1, 1, 0, VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS, VGA_BLANK);
 
@@ -41,6 +41,6 @@ module cpu_vga(
         .VGA_HS(VGA_HS),
         .VGA_VS(VGA_VS));
 
-    memvga memvga_(clk, s4[4:0], e4_2);
+    memvga memvga_(clk, s4[4:0], e4);
 
 endmodule
