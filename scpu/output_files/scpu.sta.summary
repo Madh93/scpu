@@ -3,63 +3,63 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'VGA_CLOCK'
-Slack : -16.235
-TNS   : -3039.386
+Slack : -17.286
+TNS   : -2840.724
 
 Type  : Slow Model Setup 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : -8.733
-TNS   : -257.716
+Slack : -9.596
+TNS   : -262.339
 
 Type  : Slow Model Setup 'reset'
-Slack : 2.378
+Slack : 3.158
 TNS   : 0.000
 
 Type  : Slow Model Setup 'vga_|VGA_ADAPTER|mypll|altpll_component|pll|clk[0]'
-Slack : 29.563
+Slack : 31.099
 TNS   : 0.000
 
 Type  : Slow Model Hold 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : -13.578
-TNS   : -236.638
+Slack : -13.126
+TNS   : -252.392
 
 Type  : Slow Model Hold 'reset'
-Slack : -7.834
-TNS   : -57.750
+Slack : -7.919
+TNS   : -60.805
+
+Type  : Slow Model Hold 'VGA_CLOCK'
+Slack : 0.151
+TNS   : 0.000
 
 Type  : Slow Model Hold 'vga_|VGA_ADAPTER|mypll|altpll_component|pll|clk[0]'
 Slack : 0.445
 TNS   : 0.000
 
-Type  : Slow Model Hold 'VGA_CLOCK'
-Slack : 0.470
-TNS   : 0.000
-
 Type  : Slow Model Recovery 'vga_|VGA_ADAPTER|mypll|altpll_component|pll|clk[0]'
-Slack : -2.196
-TNS   : -38.960
+Slack : -2.169
+TNS   : -38.846
 
 Type  : Slow Model Recovery 'VGA_CLOCK'
-Slack : -0.365
-TNS   : -11.122
+Slack : -0.789
+TNS   : -28.494
 
 Type  : Slow Model Recovery 'reset'
-Slack : 4.928
+Slack : 4.835
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : 5.476
+Slack : 5.237
 TNS   : 0.000
 
 Type  : Slow Model Removal 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : -10.625
-TNS   : -104.405
+Slack : -10.065
+TNS   : -100.375
 
 Type  : Slow Model Removal 'reset'
-Slack : -4.881
-TNS   : -46.965
+Slack : -4.858
+TNS   : -48.305
 
 Type  : Slow Model Removal 'VGA_CLOCK'
-Slack : 0.243
+Slack : 0.564
 TNS   : 0.000
 
 Type  : Slow Model Removal 'vga_|VGA_ADAPTER|mypll|altpll_component|pll|clk[0]'
@@ -67,8 +67,8 @@ Slack : 2.138
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : -5.251
-TNS   : -995.296
+Slack : -5.416
+TNS   : -1727.032
 
 Type  : Slow Model Minimum Pulse Width 'reset'
 Slack : -1.469
@@ -83,72 +83,72 @@ Slack : 17.436
 TNS   : 0.000
 
 Type  : Fast Model Setup 'VGA_CLOCK'
-Slack : -4.893
-TNS   : -719.164
+Slack : -5.284
+TNS   : -755.153
 
 Type  : Fast Model Setup 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : -2.674
-TNS   : -78.690
+Slack : -3.006
+TNS   : -77.339
 
 Type  : Fast Model Setup 'reset'
-Slack : 1.902
+Slack : 2.302
 TNS   : 0.000
 
 Type  : Fast Model Setup 'vga_|VGA_ADAPTER|mypll|altpll_component|pll|clk[0]'
-Slack : 35.864
+Slack : 36.579
 TNS   : 0.000
 
 Type  : Fast Model Hold 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : -5.629
-TNS   : -106.631
+Slack : -5.466
+TNS   : -109.890
 
 Type  : Fast Model Hold 'reset'
-Slack : -3.754
-TNS   : -30.029
+Slack : -3.867
+TNS   : -31.825
 
 Type  : Fast Model Hold 'VGA_CLOCK'
-Slack : -0.420
-TNS   : -1.579
+Slack : -0.723
+TNS   : -1.348
 
 Type  : Fast Model Hold 'vga_|VGA_ADAPTER|mypll|altpll_component|pll|clk[0]'
 Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'vga_|VGA_ADAPTER|mypll|altpll_component|pll|clk[0]'
-Slack : -1.141
-TNS   : -20.900
+Slack : -1.126
+TNS   : -20.838
 
 Type  : Fast Model Recovery 'VGA_CLOCK'
-Slack : 0.250
-TNS   : 0.000
+Slack : -0.004
+TNS   : -0.020
 
 Type  : Fast Model Recovery 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : 2.484
+Slack : 2.431
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'reset'
-Slack : 2.559
+Slack : 2.579
 TNS   : 0.000
 
 Type  : Fast Model Removal 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : -4.182
-TNS   : -40.668
+Slack : -3.903
+TNS   : -38.925
 
 Type  : Fast Model Removal 'reset'
-Slack : -2.307
-TNS   : -21.918
+Slack : -2.304
+TNS   : -22.935
 
 Type  : Fast Model Removal 'VGA_CLOCK'
-Slack : -0.197
-TNS   : -5.198
+Slack : -0.066
+TNS   : -0.371
 
 Type  : Fast Model Removal 'vga_|VGA_ADAPTER|mypll|altpll_component|pll|clk[0]'
 Slack : 1.401
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'cpu:cpu_|microc:microc_|registro:PC_|q[0]'
-Slack : -2.207
-TNS   : -189.274
+Slack : -2.244
+TNS   : -379.962
 
 Type  : Fast Model Minimum Pulse Width 'reset'
 Slack : -1.222

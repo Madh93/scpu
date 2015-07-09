@@ -1,6 +1,6 @@
 module vga(
             input reset, clock,
-            input wire [2:0] colour,
+            input wire colour,
             input wire [7:0] x,
             input wire [6:0] y,
             input wire [7:0] pos,
@@ -17,9 +17,11 @@ module vga(
 
   wire [7:0] x_;
   wire [6:0] y_;
+  wire [2:0] colour_;
+
   assign x_ = x + 10 + ((pos%5)*8'b00000101);//+ 8'b00011000;  // Comenzar dentro de los margenes
-  // assign y_ = y + 25 + (((pos%8'b00000101) == 8'b00000000) ? pos*2 : 0);//+ 7'b0000110;
-  assign y_ = y + 25 + ((pos/8'b00000101)*10);
+  assign y_ = y + 25;// + ((pos/8'b00000101)*10);
+  assign colour_ = (colour == 1) ? 3'b011 : 3'b000;
 
 
   // reg [7:0] contador;
@@ -32,7 +34,7 @@ module vga(
   vga_adapter VGA_ADAPTER(
         .resetn(reset),
         .clock(clock),
-        .colour(colour),  //1 o 0 que lea desde la memoria
+        .colour(colour_),  //1 o 0 que lea desde la memoria
         // .x(x),  //salida2
         .x(x_),  //salida2
         // .y(y),  //salida3

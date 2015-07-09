@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C20F484) Path("/home/alumno/Escritorio/scpu/output_files/") File("scpu.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C20F484) Path("/home/alumno/Escritorio/scpu/scpu/output_files/") File("scpu.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

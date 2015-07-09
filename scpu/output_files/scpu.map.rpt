@@ -1,5 +1,5 @@
 Analysis & Synthesis report for scpu
-Thu Jul  9 19:16:44 2015
+Thu Jul  9 20:41:30 2015
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,16 +41,15 @@ Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Editio
  33. Parameter Settings for User Entity Instance: vga:vga_|vga_adapter:VGA_ADAPTER|vga_controller:controller
  34. Parameter Settings for User Entity Instance: vga:vga_|vga_adapter:VGA_ADAPTER|vga_controller:controller|vga_address_translator:controller_translator
  35. Parameter Settings for Inferred Entity Instance: vga:vga_|lpm_divide:Mod0
- 36. Parameter Settings for Inferred Entity Instance: vga:vga_|lpm_divide:Div0
- 37. altsyncram Parameter Settings by Entity Instance
- 38. altpll Parameter Settings by Entity Instance
- 39. Port Connectivity Checks: "vga:vga_|vga_adapter:VGA_ADAPTER"
- 40. Port Connectivity Checks: "vga:vga_"
- 41. Port Connectivity Checks: "cpu:cpu_|e_s:e_s_"
- 42. Port Connectivity Checks: "cpu:cpu_|microc:microc_|sum:sumador2"
- 43. Port Connectivity Checks: "cpu:cpu_|microc:microc_|mux1:mux4_"
- 44. Elapsed Time Per Partition
- 45. Analysis & Synthesis Messages
+ 36. altsyncram Parameter Settings by Entity Instance
+ 37. altpll Parameter Settings by Entity Instance
+ 38. Port Connectivity Checks: "vga:vga_|vga_adapter:VGA_ADAPTER"
+ 39. Port Connectivity Checks: "vga:vga_"
+ 40. Port Connectivity Checks: "cpu:cpu_|e_s:e_s_"
+ 41. Port Connectivity Checks: "cpu:cpu_|microc:microc_|sum:sumador2"
+ 42. Port Connectivity Checks: "cpu:cpu_|microc:microc_|mux1:mux4_"
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
@@ -76,13 +75,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul  9 19:16:44 2015         ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul  9 20:41:30 2015         ;
 ; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; scpu                                          ;
 ; Top-level Entity Name              ; cpu_vga                                       ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 1,191                                         ;
-;     Total combinational functions  ; 1,066                                         ;
+; Total logic elements               ; 1,153                                         ;
+;     Total combinational functions  ; 1,028                                         ;
 ;     Dedicated logic registers      ; 211                                           ;
 ; Total registers                    ; 211                                           ;
 ; Total pins                         ; 69                                            ;
@@ -236,7 +235,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/alt_u_div_mve.tdf                              ; yes             ; Auto-Generated Megafunction            ; /home/alumno/Escritorio/scpu/scpu/db/alt_u_div_mve.tdf                    ;         ;
 ; db/add_sub_lkc.tdf                                ; yes             ; Auto-Generated Megafunction            ; /home/alumno/Escritorio/scpu/scpu/db/add_sub_lkc.tdf                      ;         ;
 ; db/add_sub_mkc.tdf                                ; yes             ; Auto-Generated Megafunction            ; /home/alumno/Escritorio/scpu/scpu/db/add_sub_mkc.tdf                      ;         ;
-; db/lpm_divide_0dm.tdf                             ; yes             ; Auto-Generated Megafunction            ; /home/alumno/Escritorio/scpu/scpu/db/lpm_divide_0dm.tdf                   ;         ;
 +---------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------+---------+
 
 
@@ -245,17 +243,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,191 ;
+; Estimated Total logic elements              ; 1,153 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1066  ;
+; Total combinational functions               ; 1028  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 508   ;
-;     -- 3 input functions                    ; 350   ;
-;     -- <=2 input functions                  ; 208   ;
+;     -- 4 input functions                    ; 513   ;
+;     -- 3 input functions                    ; 348   ;
+;     -- <=2 input functions                  ; 167   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 911   ;
-;     -- arithmetic mode                      ; 155   ;
+;     -- normal mode                          ; 904   ;
+;     -- arithmetic mode                      ; 124   ;
 ;                                             ;       ;
 ; Total registers                             ; 211   ;
 ;     -- Dedicated logic registers            ; 211   ;
@@ -268,8 +266,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1     ;
 ;                                             ;       ;
 ; Maximum fan-out                             ; 187   ;
-; Total fan-out                               ; 4618  ;
-; Average fan-out                             ; 3.39  ;
+; Total fan-out                               ; 4566  ;
+; Average fan-out                             ; 3.45  ;
 +---------------------------------------------+-------+
 
 
@@ -278,17 +276,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                             ; Library Name ;
 +------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |cpu_vga                                                   ; 1066 (1)          ; 211 (0)      ; 57600       ; 0            ; 0       ; 0         ; 69   ; 0            ; |cpu_vga                                                                                                                                        ;              ;
-;    |cpu:cpu_|                                              ; 782 (0)           ; 181 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_                                                                                                                               ;              ;
+; |cpu_vga                                                   ; 1028 (1)          ; 211 (0)      ; 57600       ; 0            ; 0       ; 0         ; 69   ; 0            ; |cpu_vga                                                                                                                                        ;              ;
+;    |cpu:cpu_|                                              ; 813 (0)           ; 181 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_                                                                                                                               ;              ;
 ;       |e_s:e_s_|                                           ; 43 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_                                                                                                                      ;              ;
 ;          |mux_out:mux_salida|                              ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|mux_out:mux_salida                                                                                                   ;              ;
 ;          |reg_e:sal1|                                      ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|reg_e:sal1                                                                                                           ;              ;
 ;          |reg_e:sal2|                                      ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|reg_e:sal2                                                                                                           ;              ;
 ;          |reg_e:sal3|                                      ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|reg_e:sal3                                                                                                           ;              ;
 ;          |reg_e:sal4|                                      ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|e_s:e_s_|reg_e:sal4                                                                                                           ;              ;
-;       |microc:microc_|                                     ; 720 (0)           ; 149 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_                                                                                                                ;              ;
+;       |microc:microc_|                                     ; 751 (0)           ; 149 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_                                                                                                                ;              ;
 ;          |alu:alu_|                                        ; 95 (95)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|alu:alu_                                                                                                       ;              ;
-;          |memprog:memoria_|                                ; 340 (340)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|memprog:memoria_                                                                                               ;              ;
+;          |memprog:memoria_|                                ; 371 (371)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|memprog:memoria_                                                                                               ;              ;
 ;          |mux1:mux4_|                                      ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|mux1:mux4_                                                                                                     ;              ;
 ;          |mux2:mux3_|                                      ; 35 (35)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|mux2:mux3_                                                                                                     ;              ;
 ;          |regfile:banco_|                                  ; 210 (210)         ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|regfile:banco_                                                                                                 ;              ;
@@ -298,11 +296,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |sum:sumador_|                                    ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|microc:microc_|sum:sumador_                                                                                                   ;              ;
 ;       |uc:uc_|                                             ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|cpu:cpu_|uc:uc_                                                                                                                        ;              ;
 ;    |memvga:memvga_|                                        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|memvga:memvga_                                                                                                                         ;              ;
-;    |vga:vga_|                                              ; 269 (36)          ; 30 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_                                                                                                                               ;              ;
-;       |lpm_divide:Div0|                                    ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|lpm_divide:Div0                                                                                                               ;              ;
-;          |lpm_divide_0dm:auto_generated|                   ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                                                 ;              ;
-;             |sign_div_unsign_akh:divider|                  ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                                                     ;              ;
-;                |alt_u_div_mve:divider|                     ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider                               ;              ;
+;    |vga:vga_|                                              ; 200 (26)          ; 30 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_                                                                                                                               ;              ;
 ;       |lpm_divide:Mod0|                                    ; 62 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|lpm_divide:Mod0                                                                                                               ;              ;
 ;          |lpm_divide_35m:auto_generated|                   ; 62 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                                                 ;              ;
 ;             |sign_div_unsign_akh:divider|                  ; 62 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_vga|vga:vga_|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                                                     ;              ;
@@ -1085,29 +1079,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: vga:vga_|lpm_divide:Div0 ;
-+------------------------+----------------+---------------------------------+
-; Parameter Name         ; Value          ; Type                            ;
-+------------------------+----------------+---------------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                         ;
-; LPM_WIDTHD             ; 3              ; Untyped                         ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                         ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                         ;
-; LPM_PIPELINE           ; 0              ; Untyped                         ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                         ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                         ;
-; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                         ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                         ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                         ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                      ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                    ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                    ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                  ;
-+------------------------+----------------+---------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-----------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                    ;
 +-------------------------------------------+---------------------------------------------------------+
@@ -1150,6 +1121,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
 ; Port      ; Type   ; Severity ; Details                                                                                                                   ;
 +-----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; colour[2] ; Input  ; Info     ; Stuck at GND                                                                                                              ;
 ; VGA_R     ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "VGA_R[9..4]" have no fanouts ;
 ; VGA_G     ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "VGA_G[9..4]" have no fanouts ;
 ; VGA_B     ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "VGA_B[9..4]" have no fanouts ;
@@ -1159,17 +1131,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "vga:vga_"                                                                                                        ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                                                  ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; colour[1..0] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; colour[2]    ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; VGA_BLANK    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; VGA_SYNC     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; VGA_CLK      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga:vga_"                                                                                                     ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; VGA_BLANK ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; VGA_SYNC  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; VGA_CLK   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1220,7 +1190,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jul  9 19:16:34 2015
+    Info: Processing started: Thu Jul  9 20:41:20 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off scpu -c scpu
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /home/alumno/Escritorio/scpu/modules/printvga.v
@@ -1274,7 +1244,7 @@ Info (12128): Elaborating entity "mux1" for hierarchy "cpu:cpu_|microc:microc_|m
 Info (12128): Elaborating entity "registro" for hierarchy "cpu:cpu_|microc:microc_|registro:PC_"
 Info (12128): Elaborating entity "sum" for hierarchy "cpu:cpu_|microc:microc_|sum:sumador_"
 Info (12128): Elaborating entity "memprog" for hierarchy "cpu:cpu_|microc:microc_|memprog:memoria_"
-Warning (10850): Verilog HDL warning at memprog.v(11): number of words (149) in memory file does not match the number of elements in the address range [0:1023]
+Warning (10850): Verilog HDL warning at memprog.v(11): number of words (165) in memory file does not match the number of elements in the address range [0:1023]
 Warning (10030): Net "mem.data_a" at memprog.v(7) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "mem.waddr_a" at memprog.v(7) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "mem.we_a" at memprog.v(7) has no driver or initial value, using a default initial value '0'
@@ -1324,8 +1294,8 @@ Info (10041): Inferred latch for "d3[6]" at componentes.v(153)
 Info (10041): Inferred latch for "d3[7]" at componentes.v(153)
 Info (12128): Elaborating entity "reg_e" for hierarchy "cpu:cpu_|e_s:e_s_|reg_e:sal1"
 Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_"
-Warning (10230): Verilog HDL assignment warning at vga.v(20): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at vga.v(22): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at vga.v(22): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at vga.v(23): truncated value with size 32 to match size of target (7)
 Warning (10034): Output port "VGA_BLANK" at vga.v(9) has no driver
 Warning (10034): Output port "VGA_SYNC" at vga.v(9) has no driver
 Warning (10034): Output port "VGA_CLK" at vga.v(9) has no driver
@@ -1394,9 +1364,8 @@ Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
     Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
     Warning (19017): Found clock multiplexer cpu:cpu_|microc:microc_|memprog:memoria_|mem~synth
-Info (278001): Inferred 2 megafunctions from design logic
+Info (278001): Inferred 1 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:vga_|Mod0"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:vga_|Div0"
 Info (12130): Elaborated megafunction instantiation "vga:vga_|lpm_divide:Mod0"
 Info (12133): Instantiated megafunction "vga:vga_|lpm_divide:Mod0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "8"
@@ -1413,14 +1382,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_lkc
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
     Info (12023): Found entity 1: add_sub_mkc
-Info (12130): Elaborated megafunction instantiation "vga:vga_|lpm_divide:Div0"
-Info (12133): Instantiated megafunction "vga:vga_|lpm_divide:Div0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "8"
-    Info (12134): Parameter "LPM_WIDTHD" = "3"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_0dm.tdf
-    Info (12023): Found entity 1: lpm_divide_0dm
 Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch cpu:cpu_|e_s:e_s_|mux_out:mux_salida|d0[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:cpu_|microc:microc_|registro:PC_|q[9]
@@ -1520,15 +1481,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "clk"
-Info (21057): Implemented 1319 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1281 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 1234 logic cells
+    Info (21061): Implemented 1196 logic cells
     Info (21064): Implemented 15 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 126 warnings
-    Info: Peak virtual memory: 345 megabytes
-    Info: Processing ended: Thu Jul  9 19:16:44 2015
+    Info: Peak virtual memory: 341 megabytes
+    Info: Processing ended: Thu Jul  9 20:41:30 2015
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:10
 
